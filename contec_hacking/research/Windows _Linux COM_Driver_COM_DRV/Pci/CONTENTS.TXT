@@ -1,0 +1,50 @@
+        Release Notes for COM(PCI/PCI Express) series 
+                               Produced by CONTEC Co., Ltd. 1993-2022
+
+[ Contents ]
+
+   This folder contains COM(PCI/PCI Express) series Windows COM Driver.
+
+   The following is a list of these files:
+
+ 
+ | CONTENTS.TXT ------ Full introduction of COM(PCI/PCI Express) series.
+ |                     (This file)
+ | READMEJ.TXT ------- COM driver introduction file (for Japanese).
+ | READMEE.TXT ------- COM driver introduction file (for English).
+ |
+ |- ComDrv_ForWin10 
+ |    |- i386-   
+ |    |  [1] APCFG.DLL --------- Configuration DLL.
+ |    |  [2] COMDRV2K.SYS ------ COM driver.
+ |    |  [3] CPORTS.DLL -------- COM Property page.
+ |    |  [4] CTSTCOM.EXE ------- Diagnosis program for COM port.
+ |    |- amd64-   
+ |    |  [1] APCFG.DLL --------- Configuration DLL for 64bit.
+ |    |  [2] COMDRV64.SYS ------ COM driver for 64bit.
+ |    |  [3] CPORTS64.DLL ------ COM Property page for 64bit.
+ |    |  [4] CTSTCOM.EXE ------- Diagnosis program for COM port.
+ |    |
+ |   [1] COM2k_PI.CAT ---------- Digital Signature Catalog File
+ |   [2] COM2k_PI.INF ---------- Win 10 or later MultiFunction INF 
+ |                               file for COM(PCI/PCI Express) series.
+ |   [3] DIAGNOS.TXT ----------- How to use Diagnosis program (for Japanese).
+ |   [4] EULAJ.TXT ------------- End User License Agreement (for Japanese).
+ |   [5] EULAU.TXT ------------- End User License Agreement (for English).
+ |   [6] PORTPCI2.CAT ---------- Digital Signature Catalog File
+ |   [7] PORTPCI2.INF ---------- Win 10 or later COM port INF 
+ |                               file for COM(PCI/PCI Express) series.
+ |    
+ |-InstDoc
+       |- WIN_10_2016-
+       |   [1] INST10_J.TXT ---- Win 10/Server 2016 COM driver 
+       |                         introduction file (for Japanese).
+       |   [2] INST10_E.TXT ---- Win 10/Server 2016 COM driver 
+       |                         introduction file (for English).
+       |
+       |- WINSERVER2019-
+           [1] INST2019_J.TXT -- Win Server 2019 COM driver 
+                                 introduction file (for Japanese).
+           [2] INST2019_E.TXT -- Win Server 2019 COM driver 
+                                 introduction file (for English).
+

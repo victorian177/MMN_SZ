@@ -1,0 +1,651 @@
+;***************************************************************************
+; File Name: PORTPCI2.INF   Ver8.50
+; Installation Windows 10 (or Later) inf for CONTEC PCI & PCI Express Board.
+; Communication Series Information File for COMDRV.
+; Target: COM-x(PCI)H/COM-x(PCI)/COM-xx-LPE/GCOM-xx-PCI
+; Copyright (c) 1998-  CONTEC Co.,Ltd.  All Rights Reserved.
+;
+; Ver.3.50
+; Ver.4.30	2003.05.20		Add uninstaller and original propaty page.
+;					But only Windows XP/2000.
+; Ver.5.20	2006.10.01		Add SkipEnumerations key.(Not Support SerialMouse) 
+; Ver.6.00	2007.03.01		Windows Vista add supported.
+; Ver.6.20	2007.08.22		ClassInstall Section Add.
+; Ver.6.22-6.24	2007.12.28-2009.03.23	Version change only.
+; Ver.6.30      2009.12.28              Add Windows x64 Systems.
+; Ver.6.31	2010.11.19		Version change only.
+; Ver.6.33	2013.02.18		Change Inf for support Windows 8 (x64). 
+; Ver.6.34	2014.01.07		Add GCOM PCI Boards.
+; Ver.6.35	2014.08.06		Version change only.
+; Ver.6.40	2014.09.30		Version change only.
+; Ver.6.41	2015.11.10		Change Inf for support Windows 10. 
+; Ver.6.42	2015.12.10		Support SHA-2.
+; Ver.6.50	2017.03.14		Supports "Driver Signing policy changes in Windows 10"
+; Ver.6.60	2017.08.04		Add COM-2PD-LPE and COM-1PDH-LPE
+; Ver.6.61	2017.10.20		Support Windows Server 2016.
+; Ver.6.62	2018.02.12		Add CPS-COM-1PC, CPS-COM-2PC, CPS-COM-1PD and CPS-COM-2PD 
+; Ver.6.70	2019.06.24		Checked the operation on Windows 10 19H1.
+; Ver.6.71	2019.10.24		Fixed a bug that may not close normally.
+; Ver.6.80	2019.12.12		Support Windows Server 2019.
+; Ver.6.90	2019.12.18		Checked the operation on Windows 10 19H2.
+; Ver.7.00	2020.07.14		Checked the operation on Windows 10 2004.
+; Ver.7.10	2020.09.17		Add Python sample.
+; Ver.7.20	2020.11.27		Checked the operation on Windows 10 20H2.
+; Ver.8.00	2021.04.12		Support Python 3.9. Revise the support OS.
+; Ver.8.10	2021.06.22		Checked the operation on Windows 10 21H1.
+; Ver.8.11	2021.10.21		Fixed a bug AutoRS485.
+; Ver.8.20	2021.11.15		Support Windows 11.
+; Ver.8.30	2021.12.10		Support Python 3.10. Checked the operation on Windows 10 21H2.
+; Ver.8.40	2022.01.12		Add COM-1C, COM-1D.
+; Ver.8.50	2022.03.04		Support Windows Server 2022.
+;***************************************************************************
+
+; Example INF file to specify another ID for serial
+;
+
+[version]
+signature="$Windows NT$"
+Class=Ports
+ClassGuid={4D36E978-E325-11CE-BFC1-08002BE10318}
+Provider=%CONTEC%
+DriverVer=03/04/2022,8.5.0.0
+
+CatalogFile=portpci2.cat
+
+
+[ControlFlags]
+ExcludeFromSelect=PORT1
+ExcludeFromSelect=PORT2
+ExcludeFromSelect=PORT3
+ExcludeFromSelect=PORT4
+ExcludeFromSelect=PORT5
+ExcludeFromSelect=PORT6
+ExcludeFromSelect=PORT7
+ExcludeFromSelect=PORT8
+ExcludeFromSelect=PORT1P
+ExcludeFromSelect=PORT2P
+ExcludeFromSelect=PORT3P
+ExcludeFromSelect=PORT4P
+
+; Drivers
+;----------------------------------------------------------
+[Manufacturer]
+%CONTEC%=CONTEC,NTamd64
+
+[CONTEC]
+%COM-x(PCI)% = Port1_Vista, PORT1 ; Communications Port
+%COM-x(PCI)% = Port2_Vista, PORT2 ; Communications Port
+%COM-x(PCI)% = Port3_Vista, PORT3 ; Communications Port
+%COM-x(PCI)% = Port4_Vista, PORT4 ; Communications Port
+%COM-x(PCI)% = Port5_Vista, PORT5 ; Communications Port
+%COM-x(PCI)% = Port6_Vista, PORT6 ; Communications Port
+%COM-x(PCI)% = Port7_Vista, PORT7 ; Communications Port
+%COM-x(PCI)% = Port8_Vista, PORT8 ; Communications Port
+%COM-xPD(PCI)% = Port1P_Vista, PORT1P ; Communications Port
+%COM-xPD(PCI)% = Port2P_Vista, PORT2P ; Communications Port
+%COM-xPD(PCI)% = Port3P_Vista, PORT3P ; Communications Port
+%COM-xPD(PCI)% = Port4P_Vista, PORT4P ; Communications Port
+
+%CPSCOM-x(PCI)% = CpsPort1_Vista, CPSPORT1 ; Communications Port
+%CPSCOM-x(PCI)% = CpsPort2_Vista, CPSPORT2 ; Communications Port
+%CPSCOM-xPD(PCI)% = CpsPort1P_Vista, CPSPORT1P ; Communications Port
+%CPSCOM-xPD(PCI)% = CpsPort2P_Vista, CPSPORT2P ; Communications Port
+
+%COM-xC% = Port1_Vista, PORT1 ; Communications Port
+%COM-xD% = Port1P_Vista, PORT1 ; Communications Port
+
+[CONTEC.NTamd64]
+%COM-x(PCI)% = Port1_Vista, PORT1 ; Communications Port
+%COM-x(PCI)% = Port2_Vista, PORT2 ; Communications Port
+%COM-x(PCI)% = Port3_Vista, PORT3 ; Communications Port
+%COM-x(PCI)% = Port4_Vista, PORT4 ; Communications Port
+%COM-x(PCI)% = Port5_Vista, PORT5 ; Communications Port
+%COM-x(PCI)% = Port6_Vista, PORT6 ; Communications Port
+%COM-x(PCI)% = Port7_Vista, PORT7 ; Communications Port
+%COM-x(PCI)% = Port8_Vista, PORT8 ; Communications Port
+%COM-xPD(PCI)% = Port1P_Vista, PORT1P ; Communications Port
+%COM-xPD(PCI)% = Port2P_Vista, PORT2P ; Communications Port
+%COM-xPD(PCI)% = Port3P_Vista, PORT3P ; Communications Port
+%COM-xPD(PCI)% = Port4P_Vista, PORT4P ; Communications Port
+
+%CPSCOM-x(PCI)% = CpsPort1_Vista, CPSPORT1 ; Communications Port
+%CPSCOM-x(PCI)% = CpsPort2_Vista, CPSPORT2 ; Communications Port
+%CPSCOM-xPD(PCI)% = CpsPort1P_Vista, CPSPORT1P ; Communications Port
+%CPSCOM-xPD(PCI)% = CpsPort2P_Vista, CPSPORT2P ; Communications Port
+
+%COM-xC% = Port1_Vista, PORT1 ; Communications Port
+%COM-xD% = Port1P_Vista, PORT1 ; Communications Port
+
+;
+; Redirect NT, NT.HW and NT.Services decorated sections
+;
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port1_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port1_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port1.NT.HW.AddReg
+
+[Port1_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort1_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[CpsPort1_Vista.NT.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port1.NT.HW.AddReg
+
+[CpsPort1_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;---- (64bit) ----
+[Port1_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port1_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port1.NT.HW.AddReg
+
+[Port1_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort1_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[CpsPort1_Vista.NTamd64.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port1.NT.HW.AddReg
+
+[CpsPort1_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port2_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port2_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port2.NT.HW.AddReg
+
+[Port2_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort2_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[CpsPort2_Vista.NT.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port2.NT.HW.AddReg
+
+[CpsPort2_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;---- (64bit) ----
+[Port2_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port2_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port2.NT.HW.AddReg
+
+[Port2_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort2_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[CpsPort2_Vista.NTamd64.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port2.NT.HW.AddReg
+
+[CpsPort2_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port3_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port3_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port3.NT.HW.AddReg
+
+[Port3_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port3_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port3_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port3.NT.HW.AddReg
+
+[Port3_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port4_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port4_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port4.NT.HW.AddReg
+
+[Port4_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port4_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port4_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port4.NT.HW.AddReg
+
+[Port4_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port5_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port5_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port5.NT.HW.AddReg
+
+[Port5_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port5_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port5_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port5.NT.HW.AddReg
+
+[Port5_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port6_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port6_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port6.NT.HW.AddReg
+
+[Port6_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port6_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port6_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port6.NT.HW.AddReg
+
+[Port6_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port7_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port7_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port7.NT.HW.AddReg
+
+[Port7_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port7_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port7_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port7.NT.HW.AddReg
+
+[Port7_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port8_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port8_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port8.NT.HW.AddReg
+
+[Port8_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port8_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port8_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port8.NT.HW.AddReg
+
+[Port8_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;---------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port1P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port1P_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port1P.NT.HW.AddReg
+
+[Port1P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort1P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[CpsPort1P_Vista.NT.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port1P.NT.HW.AddReg
+
+[CpsPort1P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;---- (64bit) ----
+[Port1P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port1P_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port1P.NT.HW.AddReg
+
+[Port1P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort1P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[CpsPort1P_Vista.NTamd64.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port1P.NT.HW.AddReg
+
+[CpsPort1P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port2P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port2P_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port2P.NT.HW.AddReg
+
+[Port2P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+;---- CONPROSYS ----
+[CpsPort2P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[CpsPort2P_Vista.NT.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port2P.NT.HW.AddReg
+
+[CpsPort2P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;---- (64bit) ----
+[Port2P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port2P_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port2P.NT.HW.AddReg
+
+[Port2P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- CONPROSYS ----
+[CpsPort2P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[CpsPort2P_Vista.NTamd64.HW]
+AddReg=CpsPort.NT.HW.AddReg,Port2P.NT.HW.AddReg
+
+[CpsPort2P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+;-------------------
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port3P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port3P_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port3P.NT.HW.AddReg
+
+[Port3P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- (64bit) ----
+[Port3P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port3P_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port3P.NT.HW.AddReg
+
+[Port3P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+;---- (32bit) ----
+[Port4P_Vista.NT]
+AddReg=Port.AddReg, ComDrv.NT.AddReg
+
+[Port4P_Vista.NT.HW]
+AddReg=Port.NT.HW.AddReg,Port4P.NT.HW.AddReg
+
+[Port4P_Vista.NT.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst, Serial_EventLog_Inst
+AddService = Serenum,,Serenum_Service_Inst
+
+;---- 64bit) ----
+[Port4P_Vista.NTamd64]
+AddReg=Port.AddReg, ComDrv.NTamd64.AddReg
+
+[Port4P_Vista.NTamd64.HW]
+AddReg=Port.NT.HW.AddReg,Port4P.NT.HW.AddReg
+
+[Port4P_Vista.NTamd64.Services]
+AddService = Comdrv, 0x00000002, Serial_Service_Inst_x64, Serial_EventLog_Inst_x64
+AddService = Serenum,,Serenum_Service_Inst
+
+;------------------------------------------------------------------------
+
+
+[Port1.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,1
+HKR,,ClockRate,0x00010001,3686400
+[Port2.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,2
+HKR,,ClockRate,0x00010001,3686400
+[Port3.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,3
+HKR,,ClockRate,0x00010001,3686400
+[Port4.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,4
+HKR,,ClockRate,0x00010001,3686400
+
+;; For the 8-channel card, use
+;; PortIndex = 1 ~ 4 for
+;; Channel5 ~ Channel8
+
+[Port5.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,1
+HKR,,ClockRate,0x00010001,3686400
+[Port6.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,2
+HKR,,ClockRate,0x00010001,3686400
+[Port7.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,3
+HKR,,ClockRate,0x00010001,3686400
+[Port8.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,4
+HKR,,ClockRate,0x00010001,3686400
+
+;; For the RS-422/485 card, use
+
+[Port1P.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,1
+HKR,,ClockRate,0x00010001,14745600
+[Port2P.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,2
+HKR,,ClockRate,0x00010001,14745600
+[Port3P.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,3
+HKR,,ClockRate,0x00010001,14745600
+[Port4P.NT.HW.AddReg]
+HKR,,PortIndex,0x00010001,4
+HKR,,ClockRate,0x00010001,14745600
+
+
+[Port.NT.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"serenum"
+HKR,,MultiportDevice,0x00010001,1
+HKR,,Indexed,0x00010001,0
+HKR,,MaskInverted,0x00010001,1
+HKR,,Share System Interrupt,0x00010001,1
+HKR,,ForceFifoEnable,0x00010001,1
+HKR,,TxFIFO,0x00010001,16
+HKR,,RxFIFO,0x00010001,14
+HKR,,AutoRS485Enable,0x00010001,0
+HKR,,AutoRS485Execution,0x00010001,0
+HKR,,SkipEnumerations,0x00010001,0xfffffffe
+
+;---- CONPROSYS ----
+[CpsPort.NT.HW.AddReg]
+HKR,,"UpperFilters",0x00010000,"serenum"
+HKR,,MultiportDevice,0x00010001,1
+HKR,,Indexed,0x00010001,0
+HKR,,MaskInverted,0x00010001,0	; Mask non inverted
+HKR,,Share System Interrupt,0x00010001,1
+HKR,,ForceFifoEnable,0x00010001,1
+HKR,,TxFIFO,0x00010001,16
+HKR,,RxFIFO,0x00010001,14
+HKR,,AutoRS485Enable,0x00010001,0
+HKR,,AutoRS485Execution,0x00010001,0
+HKR,,SkipEnumerations,0x00010001,0xfffffffe
+;-------------------
+
+[Port.AddReg]
+; Let Ports class know this is a serial port
+HKR,,PortSubClass,1,01
+
+[ComDrv.NT.AddReg]
+HKR,,EnumPropPages32,,"cports.dll,SerialPortPropPageProvider"
+; Uncomment the following line if you want to override the advanced dialog for
+; your device.  See msports.h for protoype of OverrideAdvancedFunction
+; HKR,,EnumAdvancedDialog,,"yourdll.dll,OverrideAdvancedFunction"
+
+[ComDrv.NTamd64.AddReg]
+HKR,,EnumPropPages32,,"cports64.dll,SerialPortPropPageProvider"
+
+; -------------- Serial Port Driver install sections(x86)
+[Serial_Service_Inst]
+DisplayName    = %Comdrv.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 1               ; SERVICE_SYSTEM_START (this driver may do detection)
+ErrorControl   = 0               ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\Comdrv2k.sys
+LoadOrderGroup = Extended base
+
+; -------------- Serial Port Driver install sections(x64)
+[Serial_Service_Inst_x64]
+DisplayName    = %Comdrv64.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 1               ; SERVICE_SYSTEM_START (this driver may do detection)
+ErrorControl   = 0               ; SERVICE_ERROR_IGNORE
+ServiceBinary  = %12%\Comdrv64.sys
+LoadOrderGroup = Extended base
+
+; -------------- Serenum Driver install section
+[Serenum_Service_Inst]
+DisplayName    = %Serenum.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\serenum.sys
+LoadOrderGroup = PNP Filter
+
+[Serial_EventLog_Inst]
+AddReg = Serial_EventLog_AddReg
+
+[Serial_EventLog_Inst_x64]
+AddReg = Serial_EventLog_AddReg_x64
+
+[Serial_EventLog_AddReg]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\Comdrv2k.sys"
+HKR,,TypesSupported,0x00010001,7
+
+[Serial_EventLog_AddReg_x64]
+HKR,,EventMessageFile,0x00020000,"%%SystemRoot%%\System32\IoLogMsg.dll;%%SystemRoot%%\System32\drivers\Comdrv64.sys"
+HKR,,TypesSupported,0x00010001,7
+
+; User readable strings
+;----------------------------------------------------------
+[Strings]
+CONTEC  = "CONTEC"
+COM-x(PCI) = "CONTEC Communications Port"
+COM-xPD(PCI) = "CONTEC Communications Port"
+CPSCOM-x(PCI) = "CONTEC Communications Port"
+CPSCOM-xPD(PCI) = "CONTEC Communications Port"
+COM-xC = "CONTEC Communications Port"
+COM-xD = "CONTEC Communications Port"
+Comdrv.SVCDESC="Comdrv2k"
+Comdrv64.SVCDESC="Comdrv64"
+Serenum.SVCDESC = "Serenum Filter Driver"
+PortsClassName = "Ports (COM & LPT)"
+
+

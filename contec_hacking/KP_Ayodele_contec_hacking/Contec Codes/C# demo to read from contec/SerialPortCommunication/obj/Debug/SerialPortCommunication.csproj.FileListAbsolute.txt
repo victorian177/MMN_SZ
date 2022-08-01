@@ -1,0 +1,9 @@
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe.config
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.exe
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.pdb
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.exe
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\Debug\SerialPortCommunication.pdb
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csprojResolveAssemblyReference.cache
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.frmMain.resources
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\PCComm.Properties.Resources.resources
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\Debug\SerialPortCommunication.csproj.GenerateResource.Cache

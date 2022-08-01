@@ -1,0 +1,102 @@
+
+=========================================================================
+= About install COM-DRV(W32) [Windows Server 2019]                      =
+=========================================================================
+
+********************************************************************
+Installing for Windows Server 2019
+********************************************************************
+-Note about Installing
+======================
+ - Installing must be performed by an administrator.
+ - If you will use the files which are downloaded from the download site 
+   of our company, please change the drive name and file name to suit your 
+   environment.
+
+-Installing for Windows Server 2019
+========================================================
+-Installing the board hardware
+ Using this OS, the OS must recognize the I/O addresses and 
+ interrupt level (IRQ) to be used for the board. 
+ Use the appropriate procedure to install the board.
+ >PCI bus board
+ (1) Set the board ID.
+ (2) Be sure to check that the personal computer is off, then plug 
+     the board into a PCI bus slot or PCI Express bus slot of personal computer.
+     And eject [COM Setup Disk] CD from CD-ROM drive.
+ (3) Turn the personal computer ON to start up Windows Server 2019
+     as an administrator.
+ (4) After OS has started up, select [Control Panel] - [Hardware] - 
+     [Devices and Printers], and select the PC which is carrying this board.
+     Open the property of the device which is registered as 
+     [PCI Simple Communications Controller].
+ (5) Click [Update Driver...] from the property page.
+ (6) The driver's installation wizard is started up. Click [Browse my computer for 
+     driver software].
+ (7) Insert [COM Setup Disk] CD into CD-ROM drive.
+     Click [Browse] and specify the CD-ROM drive name and directory name 
+     "PCI\ComDrv_ForWin10", then select [Next].
+ (8) The copy of files begins.
+ (9) As the copy of files has completed, 
+     messaege [Windows has successfully updated your drivers] is shown. 
+     Then select [Close].
+ (10) Select the PC which is carrying this board again.
+      Open the property of the device which is registered as [Multifunction Device].
+      Repeat the procedure (5)-(9).
+ (11) It is repeated, frequency amounts of the number of ports of a installed board.
+      Therefore the installation of board has completed. The added COM port is 
+      used as standerd COM port. 
+      After the installation of board has completed, be sure to check the 
+      assigned resources. The "Checking resources" part of this 
+      section explains you how to check the OS assigned resources of 
+      this board.
+
+-How to install two or more boards of the same type
+ >PCI bus board
+ (1) Check the board ID of the first board, plug it into a PCI bus 
+     slot, then start up Windows Server 2019.
+ (2) Check that the first board has been set up correctly, as 
+     described in "Checking resources".  
+     Be sure to complete installation of the first board before 
+     attempting to install the second one.
+ (3) Exit Windows Server 2019 and turn the personal computer off.
+ (4) Check the board ID of the second board, then plug it into a PCI 
+     bus slot. Assign ID to the second board a board ID that is 
+     different from the ID assigned to the first board.
+ (5) It is same as an installation method of the first board of 
+     following.
+
+-Checking resources
+===================
+ Follow the steps below to check the assigned resources managed by 
+ the OS.
+ (1) Click on the [System and Security] option in [Control Panel], 
+     then click on [System]. Open [Device Manager].
+ (2) Double-Click on the [Multifunction adapters] folder.
+ (3) Double-Click on the [CONTEC Co.,Ltd.-Board name] folder to display its 
+     properties.
+ (4) Select the [Resources] tab to check the resource type, 
+     setting, and the conflicting device list.
+
+*************************************************************************
+- Uninstalling for Windows Server 2019
+*************************************************************************
+-Note about Uninstalling
+========================
+ - Uninstalling must be performed by an administrator.
+ - If you will use the files which are downloaded from the download site 
+   of our company, please change the drive name and file name to suit your 
+   environment.
+
+-Uninstalling for Windows Server 2019
+==========================================================
+ (1) Click on the [System and Security] option in [Control Panel], 
+     then click on [System]. Open [Device Manager].
+ (2) Double-Click on the [Multifunction adapters] folder.
+ (3) An installed board is chosen, and [Uninstall device] is carried out 
+     after [Action].
+     However, when the two or more COM-*(PCI) board is being used, 
+     please also delete the board simultaneously.
+     If you uninstall all boards, check on the CheckBox 
+     [Delete the driver software for this device] 
+     at the last device only.

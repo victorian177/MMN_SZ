@@ -1,0 +1,52 @@
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe.config
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.pdb
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\PCComm.frmMain.resources
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\PCComm.Properties.Resources.resources
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.GenerateResource.Cache
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.exe
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.pdb
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\Exocortex.DSP.v1.dll
+C:\Users\techbossmb\Downloads\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csprojResolveAssemblyReference.cache
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csprojResolveAssemblyReference.cache
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\PCComm.frmMain.resources
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\PCComm.Properties.Resources.resources
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.GenerateResource.Cache
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.exe
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.pdb
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe.config
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.pdb
+F:\BCI\EEG from Tunde\SerialPortCommunication\SerialPortCommunication\bin\x86\Release\Exocortex.DSP.v1.dll
+E:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe.config
+E:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe
+E:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.pdb
+E:\Contec EEG\SerialPortCommunication\bin\x86\Release\Exocortex.DSP.v1.dll
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csprojResolveAssemblyReference.cache
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\PCComm.frmMain.resources
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\PCComm.Properties.Resources.resources
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.GenerateResource.Cache
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.exe
+E:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.pdb
+F:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe.config
+F:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe
+F:\Contec EEG\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.pdb
+F:\Contec EEG\SerialPortCommunication\bin\x86\Release\Exocortex.DSP.v1.dll
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csprojResolveAssemblyReference.cache
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\PCComm.frmMain.resources
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\PCComm.Properties.Resources.resources
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.GenerateResource.Cache
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.exe
+F:\Contec EEG\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.pdb
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe.config
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.exe
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\bin\x86\Release\SerialPortCommunication.pdb
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\bin\x86\Release\Exocortex.DSP.v1.dll
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.AssemblyReference.cache
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\PCComm.frmMain.resources
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\PCComm.Properties.Resources.resources
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.GenerateResource.cache
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.CoreCompileInputs.cache
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.csproj.CopyComplete
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.exe
+F:\0. Research Programming Info\Contec Codes\C# demo to read from contec\SerialPortCommunication\obj\x86\Release\SerialPortCommunication.pdb

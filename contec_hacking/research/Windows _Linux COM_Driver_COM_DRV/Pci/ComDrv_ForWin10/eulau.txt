@@ -1,0 +1,25 @@
+Use of this software is permitted only to those who agree to the following terms and conditions. Moreover, you shall understand that you agree to be bound by the following terms and conditions at the time you start to use this software. 
+
+1.License
+CONTEC CO., LTD. (hereinafter called CONTEC) grants to you the non-exclusive license to use this software free of charge provided you agree to the provisions specified in the terms and conditions on this Software License Agreement.
+
+2.Scope of License
+You may make a minimum number of copies of this software solely for backup or achievable purposes.  Other than for cases where the terms and conditions on this Software License Agreement apply, the entire software or a part of the software shall not be used, reproduced, revised, adapted, processed or changed, nor may it be leased or transferred to a third party.
+
+3.Copyright
+The copyright of this software as well as of manuals, etc. shall belong to CONTEC and no rights shall occur to you other than the right to use of this software granted by the terms and conditions on this Software License Agreement.
+
+4.Term of the agreement
+This Software License Agreement shall come into effect at the time you start to use this software.
+
+5.Warranty
+CONTEC shall not undertake, and you hereby expressly waives, any representations or warrantees, including the non-defectiveness of the software. 
+
+6.Exemption
+CONTEC shall not be responsible in any way for any loss of expected profit in relation to this software, for loss occurring from special circumstances, (including cases where CONTEC predicted or could predict the occurrence of damage), as well as for direct or indirect damage to the user by demand for compensation from a third party, irrespective of the reasons.
+
+7.Termination
+In case you violates any of the terms and conditions on this Software License Agreement, this agreement shall be immediately terminated and you shall scrap the software as well as any copies.
+
+8.Miscellaneous
+In case you carry this software outside of Japan, the export control rules of Japan shall be strictly observed. Irrespective of the country in which the software is to be used, this agreement shall be governed, in all respects, by and under the laws of Japan. 

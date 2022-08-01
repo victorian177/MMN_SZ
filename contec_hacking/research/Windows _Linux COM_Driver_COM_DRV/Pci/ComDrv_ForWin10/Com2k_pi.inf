@@ -1,0 +1,974 @@
+;***************************************************************************
+; FileName: COM2K_PI.INF   Ver8.50
+; Installation Windows 10 (or Later) inf for CONTEC PCI & PCI Express Board.
+; Communication Series Information File for COMDRV.
+; Copyright (c) 1998- CONTEC,Ltd.  All Rights Reserved.
+;
+; Ver.4.10		2002.04.08		COM-1,2,4(LPCI)H, COM-2,4P(PCI)H, COM-4(CB)H
+; Ver.4.20		2002.08.08		Deleted COM-4(CB)H
+; Ver.4.30		2003.05.20		Add uninstaller and original propaty page.
+;						But only Windows XP/2000.
+; Ver.4.40		2004.06.25		Add PciTool DLL & SYS.
+; Ver.4.50		2004.12.02		Version change only.
+; Ver.5.00		2005.05.11		COM-1,2PD(LPCI)H
+; Ver.5.10		2005,10,26		COM-1/2/4C-LPE
+; Ver.5.21		2006.10.31		Version change only.
+; Ver.6.00		2007.03.01		Add Windows Vista(x86)
+;						COM-2CL-PCI, COM-4CL-PCI
+; Ver.6.10		2007.05.02		COM-2DL-PCI, COM-4DL-PCI
+; Ver.6.20		2007.08.24		COM-2/4/8-PE,COM-2/4P-PE,COM-2/4PD-PE
+; Ver.6.21-Ver.6.24	2007.09.05-2009.03.23	Version Change only.
+; Ver.6.30		2009.12.28		Windows XP/2003/Vista/2008/7 x64 System Supported.
+; Ver.6.31		2011.11.19		Install directory changed.
+; Ver.6.32		2012.09.22		Version Change only.
+; Ver.6.33		2013.02.18		Version Change only.
+; Ver.6.34		2014.01.07		Add GCOM PCI Boards.
+; Ver.6.35		2014.08.06		Version Change only.
+; Ver.6.40		2014.09.30		Add COM-8C-LPE, COM-8C-LPCI
+; Ver.6.41		2015.11.10		Version Change only.
+; Ver.6.42		2015.12.10		Support SHA-2.
+; Ver.6.50		2017.03.14		Supports "Driver Signing policy changes in Windows 10"
+; Ver.6.60		2017.08.04		Add COM-2PD-LPE and COM-1PDH-LPE
+; Ver.6.61		2017.10.20		Support Windows Server 2016.
+; Ver.6.62		2018.02.12		Add CPS-COM-1PC, CPS-COM-2PC, CPS-COM-1PD and CPS-COM-2PD 
+; Ver.6.70		2019.06.24		Checked the operation on Windows 10 19H1.
+; Ver.6.71		2019.10.24		Fixed a bug that may not close normally.
+; Ver.6.80		2019.12.12		Support Windows Server 2019.
+; Ver.6.90		2019.12.18		Checked the operation on Windows 10 19H2.
+; Ver.7.00		2020.07.14		Checked the operation on Windows 10 2004.
+; Ver.7.10		2020.09.17		Add Python sample.
+; Ver.7.20		2020.11.27		Checked the operation on Windows 10 20H2.
+; Ver.8.00		2021.04.12		Support Python 3.9. Revise the support OS.
+; Ver.8.10		2021.06.22		Checked the operation on Windows 10 21H1.
+; Ver.8.11		2021.10.21		Fixed a bug AutoRS485.
+; Ver.8.20		2021.11.15		Support Windows 11.
+; Ver.8.30		2021.12.10		Support Python 3.10. Checked the operation on Windows 10 21H2.
+; Ver.8.40		2022.01.12		Add COM-1C, COM-1D.
+; Ver.8.50		2022.03.04		Support Windows Server 2022
+;***************************************************************************
+;
+; Example INF file for a device that needs MF varying resource maps,
+; but for an OS where they aren't available.
+;
+; Instead of specifying a hardware id of *PNP0501, a vendor-specific
+; hardware id is used to trigger the install of a filter driver that
+; filters the resources of the children so that they are acceptable to
+; serial/serenum
+;
+
+[Version]
+Signature = "$Windows NT$"
+Class=Multifunction
+ClassGUID={4d36e971-e325-11ce-bfc1-08002be10318}
+Provider=%CONTEC%
+LayoutFile=layout.inf
+DriverVer=03/04/2022,8.5.0.0
+CatalogFile=com2k_pi.cat
+
+[DestinationDirs]
+Sys2.Copy        = 12
+Sys2_64.Copy      = 12
+CtstCopyFiles    = 24,CONTEC        ; \CONTEC
+CtstCopyFiles_64    = 24,CONTEC        ; \CONTEC
+Property_CopyFiles = 11
+Property_CopyFiles_64 = 11
+
+[Manufacturer]
+%CONTEC%=CONTEC,NTamd64
+
+[SourceDisksNames]
+1 = %DiskId1%,,,""
+
+[SourceDisksFiles]
+; Files for disk CONTEC Co Ltd Installation Disk #1 (Multifunction)
+apcfg.dll = 1,\i386
+ctstcom.exe = 1,\i386
+ComDrv2k.sys = 1,\i386
+cports.dll = 1,\i386
+
+[SourceDisksFiles.amd64]
+ctstcom.exe = 1,\amd64
+ComDrv64.sys = 1,\amd64
+cports64.dll = 1,\amd64
+apcfg.dll = 1,\amd64
+ctstcom.exe = 1,\amd64
+
+[CONTEC]
+%COM-4(PCI)%   = Com4Pci_Vista, PCI\VEN_1221&DEV_8111&SUBSYS_00000000
+%COM-2(PCI)%   = Com2Pci_Vista, PCI\VEN_1221&DEV_8131&SUBSYS_81311221
+%COM-2PD(PCI)% = Com2PPci_Vista, PCI\VEN_1221&DEV_8141&SUBSYS_81411221
+%COM-8(PCI)%   = Com8Pci_Vista, PCI\VEN_1221&DEV_8151&SUBSYS_81511221
+%COM-4PD(PCI)% = Com4PPci_Vista, PCI\VEN_1221&DEV_8161&SUBSYS_81611221
+
+%COM-1(LPCI)H% = Com1Pci_Vista, PCI\VEN_1221&DEV_8171&SUBSYS_81711221
+%COM-2(LPCI)H% = Com2Pci_Vista, PCI\VEN_1221&DEV_8181&SUBSYS_81811221
+%COM-4(LPCI)H% = Com4Pci_Vista, PCI\VEN_1221&DEV_8191&SUBSYS_81911221
+%COM-2P(PCI)H% = Com2Pci_Vista, PCI\VEN_1221&DEV_81A1&SUBSYS_81A11221
+%COM-4P(PCI)H% = Com4Pci_Vista, PCI\VEN_1221&DEV_81B1&SUBSYS_81B11221
+
+%COM-1PD(LPCI)H% = Com1PPci_Vista, PCI\VEN_1221&DEV_81D1&SUBSYS_81D11221
+%COM-2PD(LPCI)H% = Com2PPci_Vista, PCI\VEN_1221&DEV_81E1&SUBSYS_81E11221
+
+%COM4C-LPE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8601&SUBSYS_86011221
+%COM2C-LPE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8611&SUBSYS_86111221
+%COM1C-LPE% = Com1Pci_Vista, PCI\VEN_1221&DEV_8621&SUBSYS_86211221
+
+%COM-2CL-PCI% = Com2CLPci_Vista, PCI\VEN_1221&DEV_81F1&SUBSYS_81F11221
+%COM-4CL-PCI% = Com4CLPci_Vista, PCI\VEN_1221&DEV_9101&SUBSYS_91011221
+%COM-2DL-PCI% = Com2DLPci_Vista, PCI\VEN_1221&DEV_9111&SUBSYS_91111221
+%COM-4DL-PCI% = Com4DLPci_Vista, PCI\VEN_1221&DEV_9121&SUBSYS_91211221
+
+%COM-2C-PE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8631&SUBSYS_86311221
+%COM-4C-PE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8641&SUBSYS_86411221
+%COM-8C-PE% = Com8Pci_Vista, PCI\VEN_1221&DEV_8651&SUBSYS_86511221
+%COM-2PC-PE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8661&SUBSYS_86611221
+%COM-4PC-PE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8671&SUBSYS_86711221
+%COM-2PD-PE% = Com2PPci_Vista, PCI\VEN_1221&DEV_8681&SUBSYS_86811221
+%COM-4PD-PE% = Com4PPci_Vista, PCI\VEN_1221&DEV_8691&SUBSYS_86911221
+
+%GCOM-4C2-PCI%  = Com4Pci_Vista, PCI\VEN_1221&DEV_8A11&SUBSYS_00000000
+%GCOM-2C2-PCI%  = Com2Pci_Vista, PCI\VEN_1221&DEV_8A31&SUBSYS_8A311221
+%GCOM-2PD2-PCI% = Com2PPci_Vista, PCI\VEN_1221&DEV_8A41&SUBSYS_8A411221
+%GCOM-8C2-PCI%  = Com8Pci_Vista, PCI\VEN_1221&DEV_8A51&SUBSYS_8A511221
+%GCOM-4PD2-PCI% = Com4PPci_Vista, PCI\VEN_1221&DEV_8A61&SUBSYS_8A611221
+%GCOM-1C2-LPCI% = Com1Pci_Vista, PCI\VEN_1221&DEV_8A71&SUBSYS_8A711221
+
+%COM-8C-LPCI% = Com8Pci_Vista, PCI\VEN_1221&DEV_9131&SUBSYS_91311221
+%COM-8C-LPE% =  Com8Pci_Vista, PCI\VEN_1221&DEV_86A1&SUBSYS_86A11221
+
+%COM-1PDH-LPE% =  Com1PPci_Vista, PCI\VEN_1221&DEV_86B1&SUBSYS_86B11221
+%COM-2PD-LPE% =  Com2PPci_Vista, PCI\VEN_1221&DEV_86C1&SUBSYS_86C11221
+
+;CONPROSYS
+%CPS-COM-1PC% = CpsCom1Pci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00041221
+%CPS-COM-2PC% = CpsCom2Pci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00031221
+%CPS-COM-1PD% = CpsCom1PPci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00061221
+%CPS-COM-2PD% = CpsCom2PPci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00051221
+
+%COM-1C% = Com1Pci_Vista, PCI\VEN_1221&DEV_86D1&SUBSYS_86D11221
+%COM-1D% = Com1PPci_Vista, PCI\VEN_1221&DEV_86E1&SUBSYS_86E11221
+
+[CONTEC.NTamd64]
+%COM-4(PCI)%   = Com4Pci_Vista, PCI\VEN_1221&DEV_8111&SUBSYS_00000000
+%COM-2(PCI)%   = Com2Pci_Vista, PCI\VEN_1221&DEV_8131&SUBSYS_81311221
+%COM-2PD(PCI)% = Com2PPci_Vista, PCI\VEN_1221&DEV_8141&SUBSYS_81411221
+%COM-8(PCI)%   = Com8Pci_Vista, PCI\VEN_1221&DEV_8151&SUBSYS_81511221
+%COM-4PD(PCI)% = Com4PPci_Vista, PCI\VEN_1221&DEV_8161&SUBSYS_81611221
+
+%COM-1(LPCI)H% = Com1Pci_Vista, PCI\VEN_1221&DEV_8171&SUBSYS_81711221
+%COM-2(LPCI)H% = Com2Pci_Vista, PCI\VEN_1221&DEV_8181&SUBSYS_81811221
+%COM-4(LPCI)H% = Com4Pci_Vista, PCI\VEN_1221&DEV_8191&SUBSYS_81911221
+%COM-2P(PCI)H% = Com2Pci_Vista, PCI\VEN_1221&DEV_81A1&SUBSYS_81A11221
+%COM-4P(PCI)H% = Com4Pci_Vista, PCI\VEN_1221&DEV_81B1&SUBSYS_81B11221
+
+%COM-1PD(LPCI)H% = Com1PPci_Vista, PCI\VEN_1221&DEV_81D1&SUBSYS_81D11221
+%COM-2PD(LPCI)H% = Com2PPci_Vista, PCI\VEN_1221&DEV_81E1&SUBSYS_81E11221
+
+%COM4C-LPE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8601&SUBSYS_86011221
+%COM2C-LPE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8611&SUBSYS_86111221
+%COM1C-LPE% = Com1Pci_Vista, PCI\VEN_1221&DEV_8621&SUBSYS_86211221
+
+%COM-2CL-PCI% = Com2CLPci_Vista, PCI\VEN_1221&DEV_81F1&SUBSYS_81F11221
+%COM-4CL-PCI% = Com4CLPci_Vista, PCI\VEN_1221&DEV_9101&SUBSYS_91011221
+%COM-2DL-PCI% = Com2DLPci_Vista, PCI\VEN_1221&DEV_9111&SUBSYS_91111221
+%COM-4DL-PCI% = Com4DLPci_Vista, PCI\VEN_1221&DEV_9121&SUBSYS_91211221
+
+%COM-2C-PE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8631&SUBSYS_86311221
+%COM-4C-PE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8641&SUBSYS_86411221
+%COM-8C-PE% = Com8Pci_Vista, PCI\VEN_1221&DEV_8651&SUBSYS_86511221
+%COM-2PC-PE% = Com2Pci_Vista, PCI\VEN_1221&DEV_8661&SUBSYS_86611221
+%COM-4PC-PE% = Com4Pci_Vista, PCI\VEN_1221&DEV_8671&SUBSYS_86711221
+%COM-2PD-PE% = Com2PPci_Vista, PCI\VEN_1221&DEV_8681&SUBSYS_86811221
+%COM-4PD-PE% = Com4PPci_Vista, PCI\VEN_1221&DEV_8691&SUBSYS_86911221
+
+%GCOM-4C2-PCI%  = Com4Pci_Vista, PCI\VEN_1221&DEV_8A11&SUBSYS_00000000
+%GCOM-2C2-PCI%  = Com2Pci_Vista, PCI\VEN_1221&DEV_8A31&SUBSYS_8A311221
+%GCOM-2PD2-PCI% = Com2PPci_Vista, PCI\VEN_1221&DEV_8A41&SUBSYS_8A411221
+%GCOM-8C2-PCI%  = Com8Pci_Vista, PCI\VEN_1221&DEV_8A51&SUBSYS_8A511221
+%GCOM-4PD2-PCI% = Com4PPci_Vista, PCI\VEN_1221&DEV_8A61&SUBSYS_8A611221
+%GCOM-1C2-LPCI% = Com1Pci_Vista, PCI\VEN_1221&DEV_8A71&SUBSYS_8A711221
+
+%COM-8C-LPCI% = Com8Pci_Vista, PCI\VEN_1221&DEV_9131&SUBSYS_91311221
+%COM-8C-LPE% =  Com8Pci_Vista, PCI\VEN_1221&DEV_86A1&SUBSYS_86A11221
+
+%COM-1PDH-LPE% =  Com1PPci_Vista, PCI\VEN_1221&DEV_86B1&SUBSYS_86B11221
+%COM-2PD-LPE% =  Com2PPci_Vista, PCI\VEN_1221&DEV_86C1&SUBSYS_86C11221
+
+%CPS-COM-1PC% = CpsCom1Pci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00041221
+%CPS-COM-2PC% = CpsCom2Pci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00031221
+%CPS-COM-1PD% = CpsCom1PPci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00061221
+%CPS-COM-2PD% = CpsCom2PPci_Vista, PCI\VEN_1221&DEV_E104&SUBSYS_00051221
+
+%COM-1C% = Com1Pci_Vista, PCI\VEN_1221&DEV_86D1&SUBSYS_86D11221
+%COM-1D% = Com1PPci_Vista, PCI\VEN_1221&DEV_86E1&SUBSYS_86E11221
+
+[Com1Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com1Pci_Vista.NT.HW]
+AddReg=Com1Pci_Vista.NT.RegHW
+
+[Com1Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com1Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT1
+HKR,Child00,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom1Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[CpsCom1Pci_Vista.NT.HW]
+AddReg=CpsCom1Pci_Vista.NT.RegHW
+
+[CpsCom1Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom1Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,CPSPORT1
+HKR,Child00,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com2Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com2Pci_Vista.NT.HW]
+AddReg=Com2Pci_Vista.NT.RegHW
+
+[Com2Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT2
+HKR,Child00,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom2Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[CpsCom2Pci_Vista.NT.HW]
+AddReg=CpsCom2Pci_Vista.NT.RegHW
+
+[CpsCom2Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom2Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,CPSPORT2
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,CPSPORT1
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com1PPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com1PPci_Vista.NT.HW]
+AddReg=Com1PPci_Vista.NT.RegHW
+
+[Com1PPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com1PPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT1P
+HKR,Child00,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom1PPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[CpsCom1PPci_Vista.NT.HW]
+AddReg=CpsCom1PPci_Vista.NT.RegHW
+
+[CpsCom1PPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom1PPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,CPSPORT1P
+HKR,Child00,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com2PPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com2PPci_Vista.NT.HW]
+AddReg=Com2PPci_Vista.NT.RegHW
+
+[Com2PPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2PPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT2P
+HKR,Child00,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1P
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom2PPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[CpsCom2PPci_Vista.NT.HW]
+AddReg=CpsCom2PPci_Vista.NT.RegHW
+
+[CpsCom2PPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom2PPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,CPSPORT2P
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,CPSPORT1P
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com4Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com4Pci_Vista.NT.HW]
+AddReg=Com4Pci_Vista.NT.RegHW
+
+[Com4Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT4
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2
+HKR,Child02,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+
+
+[Com8Pci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com8Pci_Vista.NT.HW]
+AddReg=Com8Pci_Vista.NT.RegHW
+
+[Com8Pci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com8Pci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT8
+HKR,Child00,VaryingResourceMap,1,00, 38,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT7
+HKR,Child01,VaryingResourceMap,1,00, 30,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT6
+HKR,Child02,VaryingResourceMap,1,00, 28,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT5
+HKR,Child03,VaryingResourceMap,1,00, 20,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+HKR,Child04,HardwareID,,PORT4
+HKR,Child04,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child04,ResourceMap,1,02
+HKR,Child05,HardwareID,,PORT3
+HKR,Child05,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child05,ResourceMap,1,02
+HKR,Child06,HardwareID,,PORT2
+HKR,Child06,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child06,ResourceMap,1,02
+HKR,Child07,HardwareID,,PORT1
+HKR,Child07,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child07,ResourceMap,1,02
+
+[Com4PPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com4PPci_Vista.NT.HW]
+AddReg=Com4PPci_Vista.NT.RegHW
+
+[Com4PPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4PPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT4P
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3P
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2P
+HKR,Child02,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1P
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+
+;;;  COM-xCL/xDL-PCI (Windows Vista or later.)
+
+[Com2CLPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com2CLPci_Vista.NT.HW]
+AddReg=Com2CLPci_Vista.NT.RegHW
+
+[Com2CLPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2CLPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT2
+HKR,Child00,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+
+[Com4CLPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com4CLPci_Vista.NT.HW]
+AddReg=Com4CLPci_Vista.NT.RegHW
+
+[Com4CLPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4CLPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT4
+HKR,Child00,VaryingResourceMap,1,00, 00,06,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3
+HKR,Child01,VaryingResourceMap,1,00, 00,04,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2
+HKR,Child02,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child03,ResourceMap,1,02
+
+[Com2DLPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com2DLPci_Vista.NT.HW]
+AddReg=Com2DLPci_Vista.NT.RegHW
+
+[Com2DLPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2DLPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT2P
+HKR,Child00,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1P
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+
+[Com4DLPci_Vista.NT]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2.Copy,CtstCopyFiles,Property_CopyFiles
+
+[Com4DLPci_Vista.NT.HW]
+AddReg=Com4DLPci_Vista.NT.RegHW
+
+[Com4DLPci_Vista.NT.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4DLPci_Vista.NT.RegHW]
+HKR,Child00,HardwareID,,PORT4P
+HKR,Child00,VaryingResourceMap,1,00, 00,06,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3P
+HKR,Child01,VaryingResourceMap,1,00, 00,04,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2P
+HKR,Child02,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1P
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child03,ResourceMap,1,02
+
+;;;;  Windows Vista /Server 2008 (x64)   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[Com1Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com1Pci_Vista.NTamd64.HW]
+AddReg=Com1Pci_Vista.NTamd64.RegHW
+
+[Com1Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com1Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT1
+HKR,Child00,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom1Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[CpsCom1Pci_Vista.NTamd64.HW]
+AddReg=CpsCom1Pci_Vista.NTamd64.RegHW
+
+[CpsCom1Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom1Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,CPSPORT1
+HKR,Child00,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com2Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com2Pci_Vista.NTamd64.HW]
+AddReg=Com2Pci_Vista.NTamd64.RegHW
+
+[Com2Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT2
+HKR,Child00,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom2Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[CpsCom2Pci_Vista.NTamd64.HW]
+AddReg=CpsCom2Pci_Vista.NTamd64.RegHW
+
+[CpsCom2Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom2Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,CPSPORT2
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,CPSPORT1
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com1PPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com1PPci_Vista.NTamd64.HW]
+AddReg=Com1PPci_Vista.NTamd64.RegHW
+
+[Com1PPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com1PPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT1P
+HKR,Child00,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom1PPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[CpsCom1PPci_Vista.NTamd64.HW]
+AddReg=CpsCom1PPci_Vista.NTamd64.RegHW
+
+[CpsCom1PPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom1PPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,CPSPORT1P
+HKR,Child00,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com2PPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com2PPci_Vista.NTamd64.HW]
+AddReg=Com2PPci_Vista.NTamd64.RegHW
+
+[Com2PPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2PPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT2P
+HKR,Child00,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1P
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+
+;;;; CONPROSYS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[CpsCom2PPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[CpsCom2PPci_Vista.NTamd64.HW]
+AddReg=CpsCom2PPci_Vista.NTamd64.RegHW
+
+[CpsCom2PPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[CpsCom2PPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,CPSPORT2P
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,CPSPORT1P
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[Com4Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+
+[Com4Pci_Vista.NTamd64.HW]
+AddReg=Com4Pci_Vista.NTamd64.RegHW
+
+[Com4Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT4
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2
+HKR,Child02,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+
+
+[Com8Pci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com8Pci_Vista.NTamd64.HW]
+AddReg=Com8Pci_Vista.NTamd64.RegHW
+
+[Com8Pci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com8Pci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT8
+HKR,Child00,VaryingResourceMap,1,00, 38,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT7
+HKR,Child01,VaryingResourceMap,1,00, 30,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT6
+HKR,Child02,VaryingResourceMap,1,00, 28,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT5
+HKR,Child03,VaryingResourceMap,1,00, 20,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+HKR,Child04,HardwareID,,PORT4
+HKR,Child04,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child04,ResourceMap,1,02
+HKR,Child05,HardwareID,,PORT3
+HKR,Child05,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child05,ResourceMap,1,02
+HKR,Child06,HardwareID,,PORT2
+HKR,Child06,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child06,ResourceMap,1,02
+HKR,Child07,HardwareID,,PORT1
+HKR,Child07,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child07,ResourceMap,1,02
+
+[Com4PPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com4PPci_Vista.NTamd64.HW]
+AddReg=Com4PPci_Vista.NTamd64.RegHW
+
+[Com4PPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4PPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT4P
+HKR,Child00,VaryingResourceMap,1,00, 18,00,00,00, 08,00,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3P
+HKR,Child01,VaryingResourceMap,1,00, 10,00,00,00, 08,00,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2P
+HKR,Child02,VaryingResourceMap,1,00, 08,00,00,00, 08,00,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1P
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 08,00,00,00
+HKR,Child03,ResourceMap,1,02
+
+;;;  COM-xCL/xDL-PCI (Windows Vista or later.)
+
+[Com2CLPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com2CLPci_Vista.NTamd64.HW]
+AddReg=Com2CLPci_Vista.NTamd64.RegHW
+
+[Com2CLPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2CLPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT2
+HKR,Child00,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+
+[Com4CLPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com4CLPci_Vista.NTamd64.HW]
+AddReg=Com4CLPci_Vista.NTamd64.RegHW
+
+[Com4CLPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4CLPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT4
+HKR,Child00,VaryingResourceMap,1,00, 00,06,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3
+HKR,Child01,VaryingResourceMap,1,00, 00,04,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2
+HKR,Child02,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child03,ResourceMap,1,02
+
+[Com2DLPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com2DLPci_Vista.NTamd64.HW]
+AddReg=Com2DLPci_Vista.NTamd64.RegHW
+
+[Com2DLPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com2DLPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT2P
+HKR,Child00,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT1P
+HKR,Child01,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+
+[Com4DLPci_Vista.NTamd64]
+Include = mf.inf
+Needs = MFINSTALL.mf
+CopyFiles=Sys2_64.Copy,CtstCopyFiles_64,Property_CopyFiles_64
+
+[Com4DLPci_Vista.NTamd64.HW]
+AddReg=Com4DLPci_Vista.NTamd64.RegHW
+
+[Com4DLPci_Vista.NTamd64.Services]
+Include = mf.inf
+Needs = MFINSTALL.mf.Services
+
+[Com4DLPci_Vista.NTamd64.RegHW]
+HKR,Child00,HardwareID,,PORT4P
+HKR,Child00,VaryingResourceMap,1,00, 00,06,00,00, 00,02,00,00
+HKR,Child00,ResourceMap,1,02
+HKR,Child01,HardwareID,,PORT3P
+HKR,Child01,VaryingResourceMap,1,00, 00,04,00,00, 00,02,00,00
+HKR,Child01,ResourceMap,1,02
+HKR,Child02,HardwareID,,PORT2P
+HKR,Child02,VaryingResourceMap,1,00, 00,02,00,00, 00,02,00,00
+HKR,Child02,ResourceMap,1,02
+HKR,Child03,HardwareID,,PORT1P
+HKR,Child03,VaryingResourceMap,1,00, 00,00,00,00, 00,02,00,00
+HKR,Child03,ResourceMap,1,02
+
+[Property_CopyFiles]
+cports.dll
+
+[Sys2.Copy]
+ComDrv2k.sys
+
+[Sys2_64.Copy]
+ComDrv64.sys
+
+[Property_CopyFiles_64]
+cports64.dll
+
+[CtstCopyFiles]
+ctstcom.exe
+apcfg.dll
+
+[CtstCopyFiles_64]
+ctstcom.exe
+apcfg.dll
+
+[Strings]
+REG_SZ         = 0x00000000
+REG_MULTI_SZ   = 0x00010000
+REG_EXPAND_SZ  = 0x00020000
+REG_BINARY     = 0x00000001
+REG_DWORD      = 0x00010001
+
+CONTEC= "CONTEC"
+
+COM-4(PCI)="CONTEC Co.,Ltd.-COM-4(PCI)H/COM-4(PCI)"			; Devices
+COM-2(PCI)="CONTEC Co.,Ltd.-COM-2(PCI)H/COM-2(PCI)"			; Devices
+COM-8(PCI)="CONTEC Co.,Ltd.-COM-8(PCI)H/COM-8(PCI)"			; Devices
+COM-2PD(PCI)="CONTEC Co.,Ltd.-COM-2PD(PCI)H/COM-2PD(PCI)"	; Devices
+COM-4PD(PCI)="CONTEC Co.,Ltd.-COM-4PD(PCI)H"				; Devices
+
+COM-1(LPCI)H="CONTEC Co.,Ltd.-COM-1(LPCI)H"		; Devices
+COM-2(LPCI)H="CONTEC Co.,Ltd.-COM-2(LPCI)H"		; Devices
+COM-4(LPCI)H="CONTEC Co.,Ltd.-COM-4(LPCI)H"		; Devices
+COM-2P(PCI)H="CONTEC Co.,Ltd.-COM-2P(PCI)H"		; Devices
+COM-4P(PCI)H="CONTEC Co.,Ltd.-COM-4P(PCI)H"		; Devices
+
+COM-1PD(LPCI)H="CONTEC Co.,Ltd.-COM-1PD(LPCI)H"	; Devices
+COM-2PD(LPCI)H="CONTEC Co.,Ltd.-COM-2PD(LPCI)H"	; Devices
+
+COM1C-LPE="CONTEC Co.,Ltd.-COM-1C-LPE"			; Devices
+COM2C-LPE="CONTEC Co.,Ltd.-COM-2C-LPE"			; Devices
+COM4C-LPE="CONTEC Co.,Ltd.-COM-4C-LPE"			; Devices
+
+COM-2CL-PCI = "CONTEC Co.,Ltd.-COM-2CL-PCI"		; Devices
+COM-4CL-PCI = "CONTEC Co.,Ltd.-COM-4CL-PCI"		; Devices
+COM-2DL-PCI = "CONTEC Co.,Ltd.-COM-2DL-PCI"		; Devices
+COM-4DL-PCI = "CONTEC Co.,Ltd.-COM-4DL-PCI"		; Devices
+
+COM-2C-PE="CONTEC Co.,Ltd.-COM-2C-PE"			; Devices
+COM-4C-PE="CONTEC Co.,Ltd.-COM-4C-PE"			; Devices
+COM-8C-PE="CONTEC Co.,Ltd.-COM-8C-PE"			; Devices
+COM-2PC-PE="CONTEC Co.,Ltd.-COM-2PC-PE"			; Devices
+COM-4PC-PE="CONTEC Co.,Ltd.-COM-4PC-PE"			; Devices
+COM-2PD-PE="CONTEC Co.,Ltd.-COM-2PD-PE"			; Devices
+COM-4PD-PE="CONTEC Co.,Ltd.-COM-4PD-PE"			; Devices
+
+GCOM-4C2-PCI="CONTEC Co.,Ltd.-GCOM-4C2-PCI"		; Devices
+GCOM-2C2-PCI="CONTEC Co.,Ltd.-GCOM-2C2-PCI"		; Devices
+GCOM-8C2-PCI="CONTEC Co.,Ltd.-GCOM-8C2-PCI"		; Devices
+GCOM-2PD2-PCI="CONTEC Co.,Ltd.-GCOM-2PD2-PCI"	; Devices
+GCOM-4PD2-PCI="CONTEC Co.,Ltd.-GCOM-4PD2-PCI"	; Devices
+GCOM-1C2-LPCI="CONTEC Co.,Ltd.-GCOM-1C2-LPCI"	; Devices
+
+COM-8C-LPCI="CONTEC Co.,Ltd.-COM-8C-LPCI"		; Devices
+COM-8C-LPE="CONTEC Co.,Ltd.-COM-8C-LPE"			; Devices
+
+COM-1PDH-LPE="CONTEC Co.,Ltd.-COM-1PDH-LPE"		; Devices
+COM-2PD-LPE="CONTEC Co.,Ltd.-COM-2PD-LPE"		; Devices
+
+;CONPROSYS
+CPS-COM-1PC="CONTEC Co.,Ltd.-CPS-COM-1PC"		; Devices
+CPS-COM-2PC="CONTEC Co.,Ltd.-CPS-COM-2PC"		; Devices
+CPS-COM-1PD="CONTEC Co.,Ltd.-CPS-COM-1PD"		; Devices
+CPS-COM-2PD="CONTEC Co.,Ltd.-CPS-COM-2PD"		; Devices
+
+COM-1C="CONTEC Co.,Ltd.-COM-1C"				; Devices
+COM-1D="CONTEC Co.,Ltd.-COM-1D"				; Devices
+
+DiskId1 = "CONTEC COM SETUP DISK "
+
+

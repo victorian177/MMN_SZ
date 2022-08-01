@@ -1,0 +1,150 @@
+
+=========================================================================
+= About install COM-DRV(W32) [Windows 10/Server 2016]                   =
+=========================================================================
+
+- Setting up the Board.
+  The board setup method for the board depends on the operating 
+  system being used. Set up the board using the method appropriate 
+  for the OS that you are using.
+
+- Notes about using API-SIO
+ >When using API-PAC, do not install from a CD-ROM of PCI/PCI Express 
+  bus board attachment. Installation designates a "\INF\WinVista\Sio" 
+  folder from API-PAC(W32).
+
+********************************************************************
+- Note to use CONTEC provides driver software 
+                      API-SIO(98/PC)NT packed into API-PAC (W32).  -
+********************************************************************
+ - Using the Floppy disk provided with the board enables the board 
+   to used as standerd windows COM port.
+   Cannot use COM port whereby it was allotted in API-SIO(98/PC)NT.
+ - When use API-SIO(98/PC)NT after installation COM-DRV, remove the 
+   registration information of the board installed with the following
+   process.
+
+ (1) Double-click on the [System and Security] option in [Control Panel], 
+     then click on [System]. Open [Device Manager].
+ (2) Double-Click on the [Multifunction adapters] folder.
+ (3) An installed board is chosen, and [Uninstall] is carried out 
+     after [Action].
+     However, when the two or more COM-*(PCI) board is being used, 
+     please also delete the board simultaneously.
+     If you uninstall all boards, check on the checkbox 
+     [Delete the driver software for this device].
+ (4) Do the installation of the board by using the medium of API-PAC 
+     (W32) because [Add New Hardware Wizard] starts after the OS 
+     re-start. 
+
+ However, cannot use a board as which using API-SIO(98/PC)NT as the 
+ standard COM port.
+
+********************************************************************
+Installing for Windows 10/Server 2016
+********************************************************************
+-Note about Installing
+======================
+ - Installing must be performed by an administrator.
+ - If you will use the files which are downloaded from the download site 
+   of our company, please change the drive name and file name to suit your 
+   environment.
+
+-Installing for Windows 10/Server 2016
+========================================================
+-Installing the board hardware
+ Using this OS, the OS must recognize the I/O addresses and 
+ interrupt level (IRQ) to be used for the board. 
+ Use the appropriate procedure to install the board.
+ >PCI bus board
+ (1) Set the board ID.
+ (2) Be sure to check that the personal computer is off, then plug 
+     the board into a PCI bus slot or PCI Express bus slot of personal computer.
+     And eject [COM Setup Disk] CD from CD-ROM drive.
+ (3) Turn the personal computer ON to start up Windows 10/Server 2016
+     as an administrator.
+ (4) After OS has started up, select [Control Panel] - [Hardware and Sound] - 
+     [Devices and Printers], and select the PC which is carrying this board.
+     Open the property of the device which is registered as 
+     [PCI Simple Communications Controller].
+ (5) Click [Change settings] from the property page. Modify it as an administrator.
+     Then click [Update Driver...].
+ (6) The driver's installation wizard is started up. Click [Browse my computer for 
+     driver softwre].
+ (7) Insert [COM Setup Disk] CD into CD-ROM drive.
+     Click [Browse] and specify the CD-ROM drive name and directory name 
+     "PCI\ComDrv_ForWin10", then select [Next].
+ (8) The message about WINDOWS Security is indicated that it begins 
+     a copy of files, please select [Install].
+     (It does not effect on the operation of board at all.)
+ (9) As the copy of files has completed, 
+     messaege [Windows has successfully updated your driver software] is shown. 
+     Then select [Close].
+ (10) Select the PC which is carrying this board again.
+      Open the property of the device which is registered as [MultiFunction Device].
+      Repeat the procedure (5)-(9).
+ (11) It is repeated, frequency amounts of the number of ports of a installed board.
+      Therefore the installation of board has completed. The added COM port is 
+      used as standerd COM port. 
+      After the installation of board has completed, be sure to check the 
+      assigned resources. The "Checking resources" part of this 
+      section explains you how to check the OS assigned resources of 
+      this board.
+
+-How to install two or more boards of the same type
+ >PCI bus board
+ (1) Check the board ID of the first board, plug it into a PCI bus 
+     slot, then start up Windows 10/Server 2016.
+ (2) Check that the first board has been set up correctly, as 
+     described in "Checking resources".  
+     Be sure to complete installation of the first board before 
+     attempting to install the second one.
+ (3) Exit Windows 10/Server 2016 and turn the personal computer off.
+ (4) Check the board ID of the second board, then plug it into a PCI 
+     bus slot. Assign ID to the second board a board ID that is 
+     different from the ID assigned to the first board.
+ (5) It is same as an installation method of the first board of 
+     following.
+
+-Checking resources
+===================
+ Follow the steps below to check the assigned resources managed by 
+ the OS.
+ (1) Double-click on the [System and Security] option in [Control Panel], 
+     then click on [System]. Open [Device Manager].
+ (2) Double-Click on the [Multifunction adapters] folder.
+ (3) Click on the [CONTEC Co.,Ltd.-Board name] folder to display its 
+     properties.
+ (4) Select the [Resources] tab to check the device type, resource 
+     settings, and the conflicting device list.
+
+*************************************************************************
+- Uninstalling for Windows 10/Server 2016
+*************************************************************************
+-Note about Uninstalling
+========================
+ - Uninstalling must be performed by an administrator.
+ - If you will use the files which are downloaded from the download site 
+   of our company, please change the drive name and file name to suit your 
+   environment.
+
+-Uninstalling for Windows 10/Server 2016
+==========================================================
+ (1) Double-click on the [System and Security] option in [Control Panel], 
+     then click on [System]. Open [Device Manager].
+ (2) Double-Click on the [Multifunction adapters] folder.
+ (3) Select the installed serial port, right-click and select [Uninstall].
+     If there are multiple serial ports, please remove all of the serial ports.
+ (4) Select the installed board, right-click and select [Uninstall].
+     However, when two or more COM-*(PCI) board is being used, 
+     please also delete the board simultaneously.
+     If you uninstall all boards, check on the CheckBox 
+     [Delete the driver software for this device] 
+     at the last device only.
+
+*************************************************************************
+- Updating for Windows 10/Server 2016
+*************************************************************************
+-Updating for Windows 10/Server 2016
+ (1) Uninstall according to [-Uninstalling for Windows 10/Server 2016].
+ (2) Install according to [-Installing for Windows 10/Server 2016].
