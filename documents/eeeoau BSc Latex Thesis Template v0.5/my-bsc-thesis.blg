@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: my-bsc-thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 34 items.
+A level-1 auxiliary file: front-matter/acknowledgements.aux
+Reallocating 'name_of_file' (item size: 1) to 28 items.
+A level-1 auxiliary file: front-matter/dedication.aux
+Reallocating 'name_of_file' (item size: 1) to 31 items.
+A level-1 auxiliary file: front-matter/Abbreviations.aux
+Reallocating 'name_of_file' (item size: 1) to 26 items.
+A level-1 auxiliary file: front-matter/Abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapters/chapter-1.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapters/chapter-2.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapters/chapter-3.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapters/chapter-4.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: chapters/chapter-5.aux
+Reallocating 'name_of_file' (item size: 1) to 5 items.
+The style file: agsm.bst
+Reallocating 'name_of_file' (item size: 1) to 35 items.
+Database file #1: references/references-dissertation.bib
+You've used 3 entries,
+            2909 wiz_defined-function locations,
+            671 strings with 5705 characters,
+and the built_in function-call counts, 15428 in all, are:
+= -- 2527
+> -- 208
+< -- 0
++ -- 1219
+- -- 63
+* -- 1371
+:= -- 3055
+add.period$ -- 3
+call.type$ -- 3
+change.case$ -- 42
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 48
+empty$ -- 108
+format.name$ -- 75
+if$ -- 2772
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 3
+newline$ -- 12
+num.names$ -- 32
+pop$ -- 7
+preamble$ -- 1
+purify$ -- 45
+quote$ -- 0
+skip$ -- 42
+stack$ -- 0
+substring$ -- 3608
+swap$ -- 9
+text.length$ -- 42
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 68
+width$ -- 0
+write$ -- 42
