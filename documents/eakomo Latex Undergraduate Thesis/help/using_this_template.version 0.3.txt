@@ -1,0 +1,33 @@
+FIRST THINGS FIRST
+You need to learn a bit about Latex and then download a good editor. Here's how I suggest you approach it:
+
+i. Do some general reading about Latex to understand the philosophy, tools, workflow etc [estimated time required: 120 minutes]
+
+ii. Install the tools you need. I recommend the following
+	- MikTex - the Latex distro
+	- TexStudio - the editor
+
+iii. You will pick up Latex syntax as you go. The syntax of the language is straightforward, but because there are so many control and formatting options, there is A LOT of syntax. For your theses however, here are the topics that should be most relevant:
+	i. How to specify new paragraphs, section, subsection, etc
+	ii. How to insert tables
+	iii. How to insert figures
+	iv. Adding references to your bibliography, and citing them within the thesis. All I will say here is: use BibTex style. Search for the reference on Google Scholar, and download the BibTex citation.
+	v. Inserting special characters.
+	vi. Inserting equations. To get you started with the last two items, there is a pdf document in the help folder with the latex commands for the most common symbols.
+
+
+USING THIS TEMPLATE
+1. Get a clean version of the template.
+2. Open the file eeeoauthesis.tex using TexStudio
+3. Enter details about your project (name, registration number, supervisor's name etc at the top of that page.
+4. Edit each of the following by opening them in TexStudio, and entering the appropriate Latex commands along with the text: 
+i. acknowledgement.tex
+ii. abbreviations.tex
+iii. abstract.tex
+iv. chapter-1.tex
+v. chapter-2.tex
+vi. chapter-3.tex
+vii. chapter-4.tex
+viii. chapter-5.tex
+
+5. When you are done editing, complile and display the output pdf file by clicking the green-double-arrow icon at thetop area of TexStudio

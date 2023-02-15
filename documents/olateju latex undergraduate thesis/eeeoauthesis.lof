@@ -1,0 +1,8 @@
+\acswitchoff 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {lstlisting}{\numberline {A.1}Ardunio code used for data collection}{16}{lstlisting.A.1}%
+\contentsline {lstlisting}{\numberline {A.2}Ardunio code used for data collection}{18}{lstlisting.A.2}%
+\contentsline {lstlisting}{\numberline {A.3}Ardunio code used calibrating each loadcell}{22}{lstlisting.A.3}%
+\contentsline {lstlisting}{\numberline {A.4}Python code used for data aquisition}{26}{lstlisting.A.4}%

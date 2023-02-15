@@ -1,5 +1,10 @@
 import numpy as np
 from matplotlib import pyplot as plt, patches
+import mne
+
+from scipy.interpolate import PchipInterpolator,interp1d
+
+import os
 
 from math import cos, pi, sin, radians
 from scipy.interpolate import griddata,interp2d
@@ -132,3 +137,49 @@ def montage_plot(eeg_sample,electrodes,ax):
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
     # plt.show()
+
+def stft_plot(ax,data,title,fs=9,sfreq=200):
+    f=mne.time_frequency.stftfreq((fs-1)*2,sfreq)
+    ax.pcolormesh(
+        list(range(data.shape[-1])),
+        f,
+        np.abs(data),
+        shading='gouraud'
+    )
+    ax.set_xlabel('Time(ms)')
+    ax.set_ylabel('Frequency(Hz)')
+    ax.set_title(title)
+
+def time_series_plot(ax,data,color,stim,xi,x,c):
+    ax.plot(
+        data,
+        color,
+        label=stim
+    )
+    ax.set_xticks(xi,x)
+    ax.set_xlabel('Time(s)')
+    ax.set_ylabel('Amplitude(uV)')
+    ax.set_title(c)
+
+def mmn_plot(ax,data):
+    xi=list(range(0,data['1000Hz'].shape[1],4))
+    x=(np.array(xi)/200).tolist()
+    ch=['T3','T4','T5','T6']
+    for r in range(data['1000Hz'].shape[0]):
+        for st,stim in enumerate(data):
+            if stim == '1000Hz':
+                color='#1a3550'
+            elif stim == ' ':
+                color='#2af466'
+            else:
+                color='#f20f35'
+            time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
+        if r==0:
+            ax[r].legend(loc='upper left')
+
+def entropy_plot(ax,data,pos):
+    if len(data) > 2:
+        data=np.array(data).mean()
+    ax.bar(pos,data,1)
+    ax.set_xticks([1,2,3,4],['F','P/C','P/O','T/O'])
+    ax.set_ylabel('FuzzEnt')
