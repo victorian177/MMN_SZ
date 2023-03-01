@@ -162,10 +162,9 @@ def time_series_plot(ax,data,color,stim,xi,x,c):
     ax.set_ylabel('Amplitude(uV)')
     ax.set_title(c)
 
-def mmn_plot(ax,data):
-    xi=list(range(0,data['1000Hz'].shape[1],20))
+def mmn_plot(ax,data,ch,points=15):
+    xi=list(range(0,data['1000Hz'].shape[1],points))
     x=(np.array(xi)/200).tolist()
-    ch=['T3','T4','T5','T6']
     for r in range(data['1000Hz'].shape[0]):
         for st,stim in enumerate(data):
             if stim == '1000Hz':
@@ -178,6 +177,16 @@ def mmn_plot(ax,data):
                 time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
         if r==0:
             ax[r].legend(loc='upper left')
+        if r!=0:
+            ax[r].set_xlabel(' ')
+
+def electrodes_mmn_plot(ax,data,c0,c1,electrodes,points):
+    mmn_data={
+        ' ':data[' '][c0:c1,:],
+        '1000Hz':data['1000Hz'][c0:c1,:],
+        '3000Hz':data['3000Hz'][c0:c1,:],
+    }
+    mmn_plot(ax,mmn_data,electrodes[c0:c1],points)
 
 def entropy_plot(ax,data,pos):
     if len(data) > 2:
