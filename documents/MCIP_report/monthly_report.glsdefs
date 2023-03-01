@@ -1,0 +1,280 @@
+\glsdefs@newdocentry{dtpcn}%
+{%
+name={data processing},%
+sort={data processing},%
+type={main},%
+first={data processing},%
+firstplural={data processings},%
+text={data processing},%
+plural={data processings},%
+description={Method(s) of transforming \gls {eeg} data},%
+descriptionplural={Method(s) of transforming \gls {eeg} data},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dtprepcn}%
+{%
+name={data preprocessing},%
+sort={data preprocessing},%
+type={main},%
+first={data preprocessing},%
+firstplural={data preprocessings},%
+text={data preprocessing},%
+plural={data preprocessings},%
+description={Method(s) of preparing \gls {eeg} datatfor transformation},%
+descriptionplural={Method(s) of preparing \gls {eeg} datatfor transformation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{szPtnt}%
+{%
+name={\gls {sz} patient},%
+sort={\gls {sz} patient},%
+type={main},%
+first={\gls {sz} patient},%
+firstplural={\gls {sz} patients},%
+text={\gls {sz} patient},%
+plural={\gls {sz} patients},%
+description={Schizophrenic},%
+descriptionplural={Schizophrenic},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sz}%
+{%
+name={SZ},%
+sort={SZ},%
+type={acronym},%
+first={schizophrenia\glsspace (SZ)},%
+firstplural={schizophrenia\acrpluralsuffix \glsspace (SZ\acrpluralsuffix )},%
+text={SZ},%
+plural={SZ\acrpluralsuffix },%
+description={schizophrenia},%
+descriptionplural={schizophrenia\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={schizophrenia},%
+longplural={schizophrenias},%
+short={SZ},%
+shortplural={SZs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eeg}%
+{%
+name={EEG},%
+sort={EEG},%
+type={acronym},%
+first={electroencephalogram\glsspace (EEG)},%
+firstplural={electroencephalogram\acrpluralsuffix \glsspace (EEG\acrpluralsuffix )},%
+text={EEG},%
+plural={EEG\acrpluralsuffix },%
+description={electroencephalogram},%
+descriptionplural={electroencephalogram\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electroencephalogram},%
+longplural={electroencephalograms},%
+short={EEG},%
+shortplural={EEGs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{daq}%
+{%
+name={DAQ},%
+sort={DAQ},%
+type={acronym},%
+first={data acquisition\glsspace (DAQ)},%
+firstplural={data acquisition\acrpluralsuffix \glsspace (DAQ\acrpluralsuffix )},%
+text={DAQ},%
+plural={DAQ\acrpluralsuffix },%
+description={data acquisition},%
+descriptionplural={data acquisition\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={data acquisition},%
+longplural={data acquisitions},%
+short={DAQ},%
+shortplural={DAQs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hc}%
+{%
+name={HC},%
+sort={HC},%
+type={acronym},%
+first={healthy control\glsspace (HC)},%
+firstplural={healthy control\acrpluralsuffix \glsspace (HC\acrpluralsuffix )},%
+text={HC},%
+plural={HC\acrpluralsuffix },%
+description={healthy control},%
+descriptionplural={healthy control\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={healthy control},%
+longplural={healthy controls},%
+short={HC},%
+shortplural={HCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{adc}%
+{%
+name={ADC},%
+sort={ADC},%
+type={acronym},%
+first={analog to digital conversion\glsspace (ADC)},%
+firstplural={analog to digital conversion\acrpluralsuffix \glsspace (ADC\acrpluralsuffix )},%
+text={ADC},%
+plural={ADC\acrpluralsuffix },%
+description={analog to digital conversion},%
+descriptionplural={analog to digital conversion\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={analog to digital conversion},%
+longplural={analog to digital conversions},%
+short={ADC},%
+shortplural={ADCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mmn}%
+{%
+name={MMN},%
+sort={MMN},%
+type={acronym},%
+first={mismatch negativity\glsspace (MMN)},%
+firstplural={mismatch negativity\acrpluralsuffix \glsspace (MMN\acrpluralsuffix )},%
+text={MMN},%
+plural={MMN\acrpluralsuffix },%
+description={mismatch negativity},%
+descriptionplural={mismatch negativity\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mismatch negativity},%
+longplural={mismatch negativitys},%
+short={MMN},%
+shortplural={MMNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{assr}%
+{%
+name={ASSR},%
+sort={ASSR},%
+type={acronym},%
+first={auditory steady state response\glsspace (ASSR)},%
+firstplural={auditory steady state response\acrpluralsuffix \glsspace (ASSR\acrpluralsuffix )},%
+text={ASSR},%
+plural={ASSR\acrpluralsuffix },%
+description={auditory steady state response},%
+descriptionplural={auditory steady state response\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={auditory steady state response},%
+longplural={auditory steady state responses},%
+short={ASSR},%
+shortplural={ASSRs},%
+counter={page},%
+parent={},%
+%
+}%
+
