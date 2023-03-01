@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 # def convertMarkersTime2Sample(data,subject,phase):
 #     x=data[subject]['eeg_data'][phase]
@@ -56,6 +57,25 @@ class aud_stimuli_trial_average:
 
     def fit_transform(self,X):
         return np.average(X,axis=0)
+    
+class stimuli_mmn:
+    def __init__(self,std_tone,N):
+        self.std_tone = std_tone
+        self.n=N
+
+    def fit_transform(self,X):
+        res = dict()
+        for s in X:
+            temp_res = dict.fromkeys(X[s].keys())
+            for stim in X[s]:
+                x = X[s][stim] - X[s][self.std_tone]
+                n=self.n
+                ret = np.cumsum(x,1)
+                ret[:,n:] = ret[:,n:] - ret[:,:-n]
+                temp_res[stim] = ret[:,n-1:]/n
+
+            res[s] = temp_res
+        return res
     
 def phase_processor(pipeline,phase_data):
     res=dict()

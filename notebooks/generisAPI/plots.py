@@ -154,7 +154,8 @@ def time_series_plot(ax,data,color,stim,xi,x,c):
     ax.plot(
         data,
         color,
-        label=stim
+        label=stim,
+        linestyle='-',
     )
     ax.set_xticks(xi,x)
     ax.set_xlabel('Time(s)')
@@ -162,18 +163,19 @@ def time_series_plot(ax,data,color,stim,xi,x,c):
     ax.set_title(c)
 
 def mmn_plot(ax,data):
-    xi=list(range(0,data['1000Hz'].shape[1],4))
+    xi=list(range(0,data['1000Hz'].shape[1],20))
     x=(np.array(xi)/200).tolist()
     ch=['T3','T4','T5','T6']
     for r in range(data['1000Hz'].shape[0]):
         for st,stim in enumerate(data):
             if stim == '1000Hz':
-                color='#1a3550'
+                color='#d7d0cf'
+                time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
             elif stim == ' ':
-                color='#2af466'
+                color='#868483'
             else:
-                color='#f20f35'
-            time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
+                color='#3b3a3a'
+                time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
         if r==0:
             ax[r].legend(loc='upper left')
 
