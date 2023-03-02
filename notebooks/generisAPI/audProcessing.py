@@ -1,5 +1,7 @@
 import numpy as np
 import pandas as pd
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, minmax_scale
+
 
 # def convertMarkersTime2Sample(data,subject,phase):
 #     x=data[subject]['eeg_data'][phase]
@@ -50,6 +52,34 @@ class pipeline:
         for i in range(len(self.ppc)):
             X = self.ppc[i].fit_transform(X)
         return X
+
+class epoch_std:
+    def __init__(self):
+        pass
+
+    def fit_transform(self,X):
+        scl=StandardScaler()
+        res = np.empty(X.shape)
+        if X.ndim == 3:
+            for i in range(X.shape[0]):
+                res[i,:,:] = scl.fit_transform(X[i,:,:])
+        elif X.ndim == 2:
+            res = scl.fit_transform(X)
+        return res
+    
+class epoch_MinMax:
+    def __init__(self,range,axis):
+        self.range = range
+        self.axis = axis
+
+    def fit_transform(self,X):
+        res = np.empty(X.shape)
+        if X.ndim == 3:
+            for i in range(X.shape[0]):
+                res[i,:,:] = minmax_scale(X[i,:,:],self.range,feature_range=self.range,axis=self.axis)
+        elif X.ndim == 2:
+            res = minmax_scale(X,feature_range=self.range,axis=self.axis)
+        return res
 
 class aud_stimuli_trial_average:
     def __init_(self):
