@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% This template is distribted with ABSOLUTELY NO WARRANTY.
+	% It is based on a template from the UT thesis guide (http://web.utk.edu/~thesis/thesisresources.shtml)
+	% No claim is made to this intellectual property, since it is based almost entirely on the UT template
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\documentclass[thesis, A4paper, 12pt]{eeeoauthesis} %thesis, one side
+
+	
+	\newcommand{\proquestmode}{}
+	\newcommand{\bs}{\boldsymbol}
+	\renewcommand\bibname{References}
+	
+	% Set the indentation spacing as well as the paragraph spacing
+	\parindent = 0in
+	\parskip = 10pt
+	%\renewcommand{\baselinestretch}{1.6}
+	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% LOAD SOME USEFUL PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[stable]{footmisc}           %%%%% stabilizes footnotes that appear in chapters, sections etc.
+\usepackage{blkarray}					%%%%% http://ctan.org/pkg/blkarray
+\usepackage{graphicx,color}
+\usepackage{nomencl}                    %%%%% produces a nomenclature
+\usepackage{float}                      %%%%% figure floats          
+\usepackage{graphicx}					%%%%% graphics package
+\usepackage{fancyhdr}                   %%%%% fancy headers and footers
+\usepackage{url}                     %%%%% nicely format url breaks
+\usepackage[inactive]{srcltx}		 	%%%%% necessary to use forward and inverse searching in DVI
+\usepackage{relsize}                    %%%%% font sizing hierarchy
+\linespread2                            %%%%% double lines spacing package
+\usepackage{adjustbox}                  %%%%% adjust tables to width of the textmargin
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{epstopdf}   				%%%%%% allows you to attached eps files	
+\usepackage{blkarray} 					%%%%%%% http://ctan.org/pkg/blkarray
+\newcommand{\matindex}[1]{\mbox{\scriptsize#1}}  %%%% Matrix index	
+\usepackage{booktabs}                   %%%%% professional looking tables
+\usepackage[config, labelfont={bf}]{caption,subfig} %%%%% nice sub figures
+\usepackage{mathrsfs}                   %%%%% additional math scripts
+\usepackage{csquotes}
+\usepackage{hyperref}
+\makeglossary
+\graphicspath{{figures/}{figures/ch2/}{figures/ch3/}{figures/ch4/}{figures/pdf/}}  %%%%%specify the path where figures are located
+\usepackage{mfirstuc}
+\usepackage{color}
+\usepackage[round, sort]{natbib}
+%\usepackage{scrextend}
+\usepackage{hanging}
+\usepackage{titlecaps}
+\usepackage{xifthen}
+\usepackage[subfigure]{tocloft}
+%new from ay
+\usepackage{longtable}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[vesion=3]{acro}
+\usepackage{bigstrut}
+%work around to include list of listing to list of figures
+\makeatletter
+\let\latex@@addcontentsline\addcontentsline
+\AtBeginDocument{%
+	\renewcommand{\addcontentsline}[3]{%
+		\def\@@zzz{#1}\def\@@zxx{lol}
+		\latex@@addcontentsline{%
+			\ifx\@@zzz\@@zxx lof\else #1\fi
+		}{#2}{#3}%
+	}
+
+\renewcommand\lstlistingname{Figure}
+\let\l@lstlsting\l@figure
+\let\c@lstlisting\c@figure
+\let\thelstlisting\thefigure
+\let\ftype@lstlisting\ftype@figure
+}
+\makeatother
+\newtheorem{dft}{Definition}[chapter]
+
+ 
+	
+%\fancypagestyle{styleempty}{
+	\fancyhf{}
+%	\setlength{\headwidth}{\textwidth}
+%	\addtolength{\headwidth}{\marginparwidth}
+%	\addtolength{\headwidth}{\marginparsep}
+%	\fancyhead[LE,RO]{\bfseries\thepage}
+%	\fancyhead[LO]{\bfseries\rightmark}
+%	\fancyhead[RE]{\bfseries\leftmark}
+%	\renewcommand{\headrulewidth}{0pt} %<- ADDED
+%	\renewcommand{\footrulewidth}{0pt} %<- ADDED%
+%}
+	
+	
+	
+	
+	
+%modify chapter here
+\usepackage{fmtcount, etoolbox}
+%\makeatletter
+%\patchcmd{\@makechapterhead}{50\p@}{10pt}{}{}
+%\patchcmd{\@makeschapterhead}{50\p@}{10pt}{}{}
+%\patchcmd{\@makechapterhead}{40\p@}{20pt}{}{}% Removes space below \chapter head
+%\patchcmd{\@makeschapterhead}{40\p@}{20pt}{}{}% Removes space below \chapter* head
+
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\onehalfspacing \normalfont\bfseries\centering\large}{\MakeUppercase\chaptertitlename\ {\NUMBERstring{chapter}}}{5pt}{\large\MakeUppercase}
+%{\singlespacing \normalfont\bfseries\centering\large}{\MakeUppercase\chaptertitlename\ \MakeUppercase\Numberstring{chapter} \thechapter}{5pt}{\large\MakeUppercase}
+
+\titlespacing*{\chapter}
+{0pt}{20pt}{30pt}
+%\titlespacing*{\section}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+%\titlespacing*{\subsection}
+%{0pt}{5.5ex plus 1ex minus .2ex}{4.3ex plus .2ex}
+
+
+%\renewcommand{\cftchapfont}{} 
+
+
+%\renewcommand{contentsname}{\scshape}
+%\renewcommand{cfttoctitlefont}{\centerline{\textbf{\LARGE\sc}}}
+\renewcommand{\cfttoctitlefont}{\hspace*{100 pt}\scshape\LARGE}
+\renewcommand{\contentsname}{Table of contents}
+
+%\renewcommand{\chapternumberline}[1]{\chaptername\ \numtoName{#1}: }
+\renewcommand{\cftchapfont}{\normalfont\scshape} 
+\renewcommand *\cftchappresnum {Chapter\ }
+\renewcommand{\cftchapaftersnum}{:}
+\renewcommand{\cftchapnumwidth}{7em}
+
+
+
+\renewcommand{\cftloftitlefont}{\hspace*{130pt}\scshape\LARGE}
+\renewcommand{\cftlottitlefont}{\hspace*{130pt}\scshape\LARGE}
+
+\renewcommand\floatpagefraction{0.05}
+
+\fancypagestyle{plain}{%			%redefine Latex plain style so no page number shown
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt} %<- ADDED
+	\fancyhf{}%
+	\fancyfoot{}%
+}

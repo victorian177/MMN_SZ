@@ -158,8 +158,7 @@ def time_series_plot(ax,data,color,stim,xi,x,c):
         linestyle='-',
     )
     ax.set_xticks(xi,x)
-    ax.set_xlabel('Time(s)')
-    ax.set_ylabel('Amplitude(uV)')
+    # ax.set_xlabel('Time(s)')
     ax.set_title(c)
 
 def mmn_plot(ax,data,ch,points=15):
@@ -176,9 +175,10 @@ def mmn_plot(ax,data,ch,points=15):
                 color='#3b3a3a'
                 time_series_plot(ax[r],data[stim][r,:],color,stim,xi,x,ch[r])
         if r==0:
-            ax[r].legend(loc='upper left')
+            # ax[r].legend(loc='upper left',fontsize=6)
+            ax[r].set_ylabel('Amplitude(uV)')
         if r!=0:
-            ax[r].set_xlabel(' ')
+            ax[r].set_ylabel(' ')
 
 def electrodes_mmn_plot(ax,data,c0,c1,electrodes,points):
     mmn_data={
