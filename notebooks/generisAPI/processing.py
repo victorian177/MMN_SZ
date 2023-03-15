@@ -86,5 +86,5 @@ def all_subjects(pipeline,data):
     res=dict()
     for s in data:
         res[s] = phase_trials_processor(pipeline,data[s]['eeg_data'])
-        print(s)
+        # print(s)
     return res

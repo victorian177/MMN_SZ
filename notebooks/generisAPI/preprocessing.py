@@ -66,6 +66,19 @@ class electrode_grouper:
                         X[ei,:,:,:].reshape(1,X.shape[-3],X.shape[-2],X.shape[-1])
                     ))
         return self.res
+    
+class dimension_augment_gaussian_noise:
+    def __init__(self,minDim):
+        self.minDim = minDim
+
+    def fit_transform(self,X):
+        if X.shape[0] < self.minDim:
+            if X.ndim==2:
+                gaussian = np.random.normal(0,1,(self.minDim-X.shape[0],X.shape[1]))
+                self.res = np.concatenate((X,gaussian),0)
+        else:
+            self.res=X
+        return self.res
 
 class channel_dropper:
     def __init__(self,index,axis):
