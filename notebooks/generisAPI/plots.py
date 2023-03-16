@@ -192,5 +192,5 @@ def entropy_plot(ax,data,pos):
     if len(data) > 2:
         data=np.array(data).mean()
     ax.bar(pos,data,1)
-    ax.set_xticks([1,2,3,4],['F','P/C','P/O','T/O'])
-    ax.set_ylabel('FuzzEnt')
+    # ax.set_xticks([1,2,3,4],['rest1','arith','rest2','auditory'])
+    # ax.set_ylabel('FuzzEnt')
