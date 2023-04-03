@@ -12,6 +12,7 @@
 \usepackage{pdflscape}
 \usepackage{float}
 \usepackage{subfig}
+\usepackage{listings}
 \hypersetup{
   colorlinks   = true,    % Colours links instead of ugly boxes
   urlcolor     = blue,    % Colour for external hyperlinks
@@ -58,7 +59,7 @@ results. Also highlighted were technical issues noticed during data acquisition 
 issues with ergonomics of developed software for the clinicians. The previous report also 
 presented the next steps to be taken.\\
 \\
-This report will highlight the challenges and next steps stated within the previous eport, then 
+This report will highlight the challenges and next steps stated within the previous report, 
 then present the progress made from the time of submission of the last report till the moment of 
 submission of this report, more recent challenges and the next steps to be taken.
 
@@ -66,50 +67,56 @@ submission of this report, more recent challenges and the next steps to be taken
 The last report presented results on some extracted features and stated some challenges the project is 
 facing which include scheduling and mobility issues, 
 subject attitude towards participation in exercise, cue communication and dellivery method, absence of 
-clinician, subject feedback system, fuzzy entropy spatial complexity algoritm problems, non-uniform session times.\\
+clinician and subject feedback system, fuzzy entropy spatial complexity algoritm problems and non-uniform session times.\\
 \\
 Also stated within the last report were the set of steps to be taken next. This steps included establishing 
 the best pre-processing path in terms of features being more discriminable, resolving left over issues 
 with audio cue delivery mechanism, development of hand held annotator for taking feedback from clinician and 
 subject, developing montage analysis algorithm, improvement of data acquisition paradigm and more data acquisition.\\
 \\
-In the next section, what has been achieved is discussed.
+In the next section, what has been achieved from the previously stated next steps is discussed.
 
 \section{Progress}
 In order to establish uniform data acquisition paradigm so that processing of data can be made 
-easier, from the already acquired data, the minumum permissible timeframe that can be met from 
-the sessions data of all subjects was adopted for data processing and incroporated into the 
-Generis software as the default. As stated that further data acquisition will take place, 
+easier, from the already acquired data, for each phase, the minumum permissible timeframe that can be met from 
+the phase data of all subjects was adopted for data processing and set into the 
+Generis software as the default phase \gls{daq}. As stated that further data acquisition will take place, 
 since then data has been acquired from twenty more subjects, distributed almost equally between 
 patients and controls.\\
 \\
-To ensure ease of interpretation of arithmetic cues and instructions, the default time for cue 
-delivery in the arithmetic phase of \gls{daq} has been increased by 60s and audio recordings of 
-the cues and instructions has ben incroporated into the Generis software for all major Nigerian 
-languages.\\
+To ensure ease of interpretation of arithmetic cues and instructions, audio recordings of 
+the cues and instructions has ben incorporated into the Generis software for all major Nigerian 
+languages in the areithmetic \gls{daq} phase.\\
 \\
 A handheld annotator is currently under design to take subject and clinician feedback on comfort, 
-artifact activity and arithmetic task completion.\\
-\\In trying to establish a best data processing path, certain areas of possible improvements were 
+artifact activity and arithmetic task completion. More details willbe given on this as the work progresses.\\
+\\
+In trying to establish a best data processing path, certain areas of possible improvements were 
 noted and acted on. One of such is the processing of the auditory phase signals from which the \gls{mmn} 
 waveform is computed. Previously,the three tone classes, one standard and two 
-deviant were plotted directly. The \gls{mmn} waveform is meant to be computed as the difference between 
-the deviants and the standard tone. This has been corrected and the results shown under section \ref{sec:figures}.
+deviant were plotted directly and investigated. The \gls{mmn} waveform is meant to be computed as the difference between 
+the deviants and the standard tone. This has been corrected and the results shown for each subject under section \ref{sec:figures}.
 Also to further smoothen the MMN waveform, a five point moving average was used and a minimum-maximum 
 scaler was used on each waveform to make visualization easier.\\
 \\
-Formerly, in computing the fuzzy entropy, the library used had a minimum space complexity rquirement. 
+Formerly, in computing the fuzzy entropy, the library used had a minimum space complexity requirement. 
 Electrode of cortical regions of high spatial proximity were combined to overcome this. This might 
-lead to some information loss. This has been improved by augmenting electrode of each region with channels 
-of gaussina noise od zero mean and a unit standard deviation. The new results are shown under 
-section \ref{sec:figures}. Also a self developed fuzzy entropy algorithm not having this limitation, has 
-been developed after extensive literature review on fuzzy entropy. The code is given in section 
+lead to some information loss. This has been improved by augmenting electrode of each region with spatial dimensions(channels) 
+of gaussian noise of zero mean and a unit standard deviation. The new results are shown under 
+section \ref{sec:figures}. After extensive  literature review a self developed fuzzy entropy algorithm has been written and tested 
+on univariate time-series, it is to be tested on multivariate time-series next. The code is given in section 
 \ref{sec:appendix}
 
 \section{Next Steps}
 Over the period of four weeks, I will be doing the following
-
-\section{Appendix}\label{sec:appendix}
+\begin{itemize}
+  \item Continue development of hand held annotator device
+  \item Improving self-developed fuzzy entropy library to work with multivariate
+  time-series(2D data).
+  \item Recomputing fuzzy entropy features.
+  \item Comparing fuzzy entropy features from developed library to sourced library.
+  \item Computing auditory steady state features.
+\end{itemize}
 
 \section{Figures}\label{sec:figures}
 \begin{figure}[H]
@@ -125,76 +132,168 @@ Over the period of four weeks, I will be doing the following
 \end{figure}
 
 \begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/11.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/12.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/13.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/17.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/19.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/24.png}
   \caption{A control subject \gls{mmn} plots}
-  \label{fig:controlMMN}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/26.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/27.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/28.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/29.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/30.png}
+  \caption{A control subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/31.png}
+  \caption{A control subject \gls{mmn} plots}
 \end{figure}
 
+
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/2.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/3.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/7.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/10.png}
   \caption{A \gls{sz} subject \gls{mmn} plots}
-  \label{fig:patientMMN}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/14.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/15.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/18.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/21.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/22.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/25.png}
+  \caption{A \gls{sz} subject \gls{mmn} plots}
 \end{figure}
 
-% \begin{figure}[H]
-%   \includegraphics{images/preProcessing.jpeg}
-%   \caption{data preprocessing architecture}
-%   \label{fig:data preprocessing}
-% \end{figure}
+\clearpage
+\section{Appendix}\label{sec:appendix}
+\subsection{Fuzzy Entropy Code}
+\begin{lstlisting}
+import numpy as np
+from scipy.spatial.distance import cdist
+import time
 
-% \begin{figure}[H]
-%   \centering
-%   \subfloat[\centering montage from 1-70hz bandpass filtering]{{\includegraphics[width=5cm]{images/ordinary_montage.png}}}
-%   \subfloat[\centering montage from filtering \& edge-interpolation]{{\includegraphics[width=5cm]{images/edge_mean_montage.png}}}
-%   \subfloat[\centering montage from filtering, edge-interpolation \& baseline-correction]{{\includegraphics[width=5cm]{images/edge_mean_baseline_montage.png}}}
-%   \caption{montage plots, first outlook}
-%   \label{fig:montages}
-% \end{figure}
-% \begin{figure}[H]
-%   \includegraphics{images/simiat_temporal1.png}
-%   \caption{plot of tone averages from auditory stimli phase during 1st outlook of data}
-%   \label{fig:temporal outlook}
-% \end{figure}
+def sigmoid(x,r):
+    assert isinstance(r,tuple), 'When Fx = "Sigmoid", r must be a two-element tuple.'
+    y = 1/(1 + np.exp((x-r[1])/r[0]))
+    return y  
+def default(x,r):   
+    assert isinstance(r,tuple), 'When Fx = "Default", r must be a two-element tuple.'
+    y = np.exp(-(x**r[1])/r[0])
+    return y     
+def modsampen(x,r):
+    assert isinstance(r,tuple), 'When Fx = "Modsampen", r must be a two-element tuple.'
+    y = 1/(1 + np.exp((x-r[1])/r[0]))
+    return y    
+def gudermannian(x,r):
+    if r <= 0:
+        raise Exception('When Fx = "Gudermannian", r must be a scalar > 0.')
+    y = np.arctan(np.tanh(r/x))    
+    y = y/np.max(y)    
+    return y    
+def linear(x,r):    
+    if r == 0 and x.shape[0]>1:    
+        y = np.exp(-(x - np.min(x))/np.ptp(x))
+    elif r == 1:
+        y = np.exp(-(x - np.min(x)))
+    elif r == 0 and x.shape[0]==1:   
+        y = 0
+    else:
+        print(r)
+        raise Exception('When Fx = "Linear", r must be 0 or 1')
+    return y
 
-% \begin{landscape}
-%   \begin{figure}
-%     \includegraphics[width=7.2in]{images/control.png}
-%     \caption{feature computation from \gls{hc}}
-%     \label{control features}
-%   \end{figure}
-% \end{landscape}
-% \begin{landscape}
-%   \begin{figure}
-%     \includegraphics[width=7.2in]{images/patient.png}
-%     \caption{feature computation from \gls{szPtnt}}
-%     \label{patient features}
-%   \end{figure}
-% \end{landscape}
+class fuzzEntropy:
+    def __init__(self,window_size,dissimilarity_index,membership_function='linear'):
+        self.m = self.window_size = window_size
+        self.r = self.dissimilarity_index = dissimilarity_index
+        self.mu = self.membership_function = globals()[membership_function.lower()]
+    
+    def __computeFuzzyMatrix(self,x,m):
+        if x.ndim == 1:
+            N = x.shape[0]
+            Xm = np.array([x[i:i+m-1].tolist() for i in range(0,N-m)])
+            dm = cdist(Xm,Xm,'euclidean')
+            dm = self.mu(dm,self.r)
+            phim = np.sum(dm,axis=1)/(N-m+1)
+        return phim
+    
+    def _fuzzyEntropyCompute(self,x):
+        N = x.shape[0]
+        phim = self.__computeFuzzyMatrix(x,self.m)
+        phim1 = self.__computeFuzzyMatrix(x,self.m+1)
 
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=13cm]{images/daqScreen.png}
-%   \caption{montage plots, first outlook}
-%   \label{fig:acquisitionScreen}
-% \end{figure}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics[width=8cm]{images/SessionParamsScreen.png}
-%   \caption{Confifuring session settings}
-%   \label{fig:paramsSreen}
-% \end{figure}
-% \begin{figure}[H]
-%   \centering
-%   \includegraphics{images/CreateSubjectScreen.resized.png}
-%   \caption{Create subject screen}
-%   \label{fig:subjectCreate}
-% \end{figure}
+        psim = (1/(N-self.m+1)) * np.sum(phim,axis=0)
+        psim1 = (1/(N-self.m+2)) * np.sum(phim1,axis=0)
 
-% \begin{figure}[H]
-%   \rotatebox[origin=c]{90}{\includegraphics{images/kt1018 flowchart.jpeg}}
-%   % \includegraphics{images/kt1018 flowchart.jpeg}
-%   \caption{acquiring one sample of eeg data from }
-%   \label{fig:kt108 sample}
-% \end{figure}
+        with np.errstate(divide='ignore', invalid='ignore'):
+            fuzz = np.log(psim)-np.log(psim1)
+        return fuzz
+    
+def fuzzEntropy2D(x,window_size,dissimilarity_index,membership_function=gaussianMembershipfunction):
+        fuzzyent = fuzzEntropy(window_size,dissimilarity_index,membership_function)
+
+        res = np.empty(x.shape[0])
+        for i in range(x.shape[0]):
+            res[i] = fuzzyent._fuzzyEntropyCompute(x[i,:])
+        return res.mean()
+\end{lstlisting}
 
 \end{document}
