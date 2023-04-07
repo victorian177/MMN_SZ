@@ -70,13 +70,13 @@ def draw_electrode(electrodes,ax):
 
 def draw_nose(ax):
         """Draw nose."""
-        nose1 = plt.Line2D([0.45,0.5],
-                          [0.9,0.95],
-                          linewidth=3,
+        nose1 = plt.Line2D([0.13,0.14],
+                          [0.27,0.29],
+                          linewidth=1,
                           color=(0, 0, 0))
-        nose2 = plt.Line2D([0.5,0.55],
-                          [0.95,0.9],
-                          linewidth=3,
+        nose2 = plt.Line2D([0.14,0.15],
+                          [0.29,0.27],
+                          linewidth=1,
                           color=(0, 0, 0))
         ax.add_line(nose1)
         ax.add_line(nose2)
@@ -85,18 +85,18 @@ def montage_plot(eeg_sample,electrodes,ax):
     head_outer_circle = patches.Circle(center, radius=r2+0.001, color='black')
     head_inner_circle = patches.Circle(center, radius=r2, color='white')
 
-    ax.set_aspect(1)
+    # ax.set_aspect(1)
     ax.add_artist(head_outer_circle)
     ax.add_artist(head_inner_circle)
 
-    # draw_nose(ax)
+    draw_nose(ax)
     draw_electrode(electrodes,ax)
 
     points=[]
     for electrode in electrodes:
         points.append(ELECTRODES[electrode])
     points = points + EDGE_COORDS
-    X,Y=np.mgrid[0:1:100j, 0:1:100j]
+    X,Y=np.mgrid[0:1:50j, 0:1:50j]
     Xi,Yi=np.meshgrid(X,Y)
     points = np.array(points)
 
@@ -105,17 +105,18 @@ def montage_plot(eeg_sample,electrodes,ax):
     data_sample = np.hstack((eeg_sample,mu_add))
     # data_sample = eeg_sample
 
-    ax.set_ylim(0,2*(r2+0.01))
-    ax.set_xlim(0,2*(r2+0.01))
+    ax.set_ylim(0,2*(r2+0.02))
+    ax.set_xlim(0,2*(r2+0.02))
 
     Z=griddata(points,data_sample,(Xi,Yi),'cubic')
-    CS = ax.contour(Xi,Yi,Z,20,cmap='RdBu',extend='both',linewidths=20,extent=(0,1,0,1))
+    CS = ax.contour(Xi,Yi,Z,30,cmap='RdBu',extend='both',linewidths=20,extent=(0,1,0,1))
 
-    ax.axis('off')
+    # ax.axis('off')
     ax.get_xaxis().set_ticks([])
     ax.get_yaxis().set_ticks([])
-    # ax.patch.set_facecolor((1,1,1,0.01))
+    ax.patch.set_facecolor((1,1,1,0.01))
     ax.patch.set_alpha(0.0)
+    # ax.set_aspect('equal')
     # plt.show()
 
 def stft_plot(ax,data,title,fs=9,sfreq=200):

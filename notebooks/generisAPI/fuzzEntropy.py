@@ -81,7 +81,7 @@ class fuzzEntropy:
             # fuzz = psim
         return fuzz
     
-def fuzzEntropy2D(x,window_size,dissimilarity_index,membership_function=gaussianMembershipfunction):
+def fuzzEntropy2D(x,window_size,dissimilarity_index,membership_function=linear):
         fuzzyent = fuzzEntropy(window_size,dissimilarity_index,membership_function)
 
         res = np.empty(x.shape[0])
