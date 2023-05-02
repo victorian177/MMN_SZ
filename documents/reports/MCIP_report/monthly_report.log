@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.2)  3 APR 2023 22:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.3.2)  2 MAY 2023 22:09
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **/media/emmanuel/DATA/Emmanuel_petron_Olateju/github/ubuntu/MMN_SZ/documents/reports/MCIP_report/monthly_report.tex
@@ -969,352 +969,443 @@ Package caption Info: End \AtBeginDocument code.
 
 LaTeX Warning: No \author given.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--78
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--109
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--109
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--109
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--109
-
- []
-
 [1
 
 \openout3 = `monthly_report.ist'.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png, id=50, 1084.05pt x 1156.32pt>
+Overfull \hbox (12.96416pt too wide) in paragraph at lines 136--139
+[]\OT1/cmr/m/n/10 Comparing fuzzy-entropy fea-tures against one an-other does ot show any form of linear-seperability,
+ []
+
+[2] [3]
+<../../../data_analysis_results/MMN/features/deviant_tone_0.png, id=123, 1300.86pt x 578.16pt>
+File: ../../../data_analysis_results/MMN/features/deviant_tone_0.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/features/deviant_tone_0.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/features/deviant_tone_0.png  used on input line 157.
+(pdftex.def)             Requested size: 455.24408pt x 202.33257pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 157--158
+[][] 
+ []
+
+<../../../data_analysis_results/MMN/features/deviant_tone_1.png, id=127, 1300.86pt x 578.16pt>
+File: ../../../data_analysis_results/MMN/features/deviant_tone_1.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/features/deviant_tone_1.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/features/deviant_tone_1.png  used on input line 161.
+(pdftex.def)             Requested size: 455.24408pt x 202.33257pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 161--162
+[][] 
+ []
+
+<../../../data_analysis_results/MMN/features/deviant_tone_2.png, id=130, 1300.86pt x 578.16pt>
+File: ../../../data_analysis_results/MMN/features/deviant_tone_2.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/features/deviant_tone_2.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/features/deviant_tone_2.png  used on input line 165.
+(pdftex.def)             Requested size: 455.24408pt x 202.33257pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 165--166
+[][] 
+ []
+
+<../../../data_analysis_results/MMN/features/deviant_tone_3.png, id=133, 1300.86pt x 578.16pt>
+File: ../../../data_analysis_results/MMN/features/deviant_tone_3.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/features/deviant_tone_3.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/features/deviant_tone_3.png  used on input line 169.
+(pdftex.def)             Requested size: 455.24408pt x 202.33257pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 169--170
+[][] 
+ []
+
+[4
+
+ <../../../data_analysis_results/MMN/features/deviant_tone_0.png> <../../../data_analysis_results/MMN/features/deviant_tone_1.png>]
+<../../../data_analysis_results/MMN/features/deviant_tone_4.png, id=143, 1300.86pt x 578.16pt>
+File: ../../../data_analysis_results/MMN/features/deviant_tone_4.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/features/deviant_tone_4.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/features/deviant_tone_4.png  used on input line 173.
+(pdftex.def)             Requested size: 455.24408pt x 202.33257pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 173--174
+[][] 
+ []
+
+[5 <../../../data_analysis_results/MMN/features/deviant_tone_2.png> <../../../data_analysis_results/MMN/features/deviant_tone_3.png>]
+<../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png, id=154, 1734.48pt x 4119.39pt>
+File: ../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png  used on input line 178.
+(pdftex.def)             Requested size: 455.24408pt x 1081.19896pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 178--179
+[][] 
+ []
+
+<../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png, id=157, 1734.48pt x 3107.61pt>
+File: ../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png  used on input line 182.
+(pdftex.def)             Requested size: 455.24408pt x 815.64131pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 182--183
+[][] 
+ []
+
+[6 <../../../data_analysis_results/MMN/features/deviant_tone_4.png>]
+Overfull \vbox (525.03897pt too high) has occurred while \output is active []
+
+ [7 <../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png>]
+<../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png, id=172, 1734.48pt x 4119.39pt>
+File: ../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png  used on input line 186.
+(pdftex.def)             Requested size: 455.24408pt x 1081.19896pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 186--187
+[][] 
+ []
+
+
+Overfull \vbox (259.48132pt too high) has occurred while \output is active []
+
+ [8 <../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png>]
+<../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png, id=181, 1734.48pt x 3107.61pt>
+File: ../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png Graphic file (type png)
+<use ../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png>
+Package pdftex.def Info: ../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png  used on input line 190.
+(pdftex.def)             Requested size: 455.24408pt x 815.64131pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 190--191
+[][] 
+ []
+
+
+Overfull \vbox (525.03897pt too high) has occurred while \output is active []
+
+ [9 <../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png>]
+Overfull \vbox (259.48132pt too high) has occurred while \output is active []
+
+ [10 <../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png>]
+<../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png, id=195, 1084.05pt x 1156.32pt>
 File: ../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png Graphic file (type png)
 <use ../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png>
-Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png  used on input line 123.
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png  used on input line 195.
 (pdftex.def)             Requested size: 455.24408pt x 485.59816pt.
 
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 123--124
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 195--196
 [][] 
  []
 
-[2]
-<../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png, id=58, 1084.05pt x 1156.32pt>
+<../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png, id=196, 1084.05pt x 1156.32pt>
 File: ../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png Graphic file (type png)
 <use ../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png>
-Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png  used on input line 129.
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png  used on input line 199.
 (pdftex.def)             Requested size: 455.24408pt x 485.59816pt.
 
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 129--130
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 199--200
 [][] 
  []
 
-[3 <../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png>]
-<../../../data_analysis_results/MMN/time_series/Control/11.png, id=65, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/11.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/11.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/11.png  used on input line 135.
+<../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png, id=197, 867.24pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png  used on input line 203.
 (pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
 
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 135--136
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 203--204
 [][] 
  []
 
-<../../../data_analysis_results/MMN/time_series/Control/12.png, id=68, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/12.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/12.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/12.png  used on input line 139.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
+[11 <../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png>] [12 <../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png>]
+<../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png, id=209, 462.528pt x 346.896pt>
+File: ../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png  used on input line 208.
+(pdftex.def)             Requested size: 455.24408pt x 341.44843pt.
 
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 139--140
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 208--209
 [][] 
  []
 
-[4 <../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png>]
-<../../../data_analysis_results/MMN/time_series/Control/13.png, id=77, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/13.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/13.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/13.png  used on input line 143.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 143--144
-[][] 
- []
-
-[5 <../../../data_analysis_results/MMN/time_series/Control/11.png>]
-<../../../data_analysis_results/MMN/time_series/Control/17.png, id=86, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/17.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/17.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/17.png  used on input line 147.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 147--148
-[][] 
- []
-
-[6 <../../../data_analysis_results/MMN/time_series/Control/12.png>]
-<../../../data_analysis_results/MMN/time_series/Control/19.png, id=95, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/19.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/19.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/19.png  used on input line 151.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 151--152
-[][] 
- []
-
-[7 <../../../data_analysis_results/MMN/time_series/Control/13.png>]
-<../../../data_analysis_results/MMN/time_series/Control/24.png, id=105, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/24.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/24.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/24.png  used on input line 155.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 155--156
-[][] 
- []
-
-[8 <../../../data_analysis_results/MMN/time_series/Control/17.png>]
-<../../../data_analysis_results/MMN/time_series/Control/26.png, id=114, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/26.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/26.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/26.png  used on input line 159.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 159--160
-[][] 
- []
-
-[9 <../../../data_analysis_results/MMN/time_series/Control/19.png>]
-<../../../data_analysis_results/MMN/time_series/Control/27.png, id=123, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/27.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/27.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/27.png  used on input line 163.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 163--164
-[][] 
- []
-
-[10 <../../../data_analysis_results/MMN/time_series/Control/24.png>]
-<../../../data_analysis_results/MMN/time_series/Control/28.png, id=132, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/28.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/28.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/28.png  used on input line 167.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 167--168
-[][] 
- []
-
-[11 <../../../data_analysis_results/MMN/time_series/Control/26.png>]
-<../../../data_analysis_results/MMN/time_series/Control/29.png, id=141, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/29.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/29.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/29.png  used on input line 171.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 171--172
-[][] 
- []
-
-[12 <../../../data_analysis_results/MMN/time_series/Control/27.png>]
-<../../../data_analysis_results/MMN/time_series/Control/30.png, id=150, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/30.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/30.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/30.png  used on input line 175.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 175--176
-[][] 
- []
-
-[13 <../../../data_analysis_results/MMN/time_series/Control/28.png>]
-<../../../data_analysis_results/MMN/time_series/Control/31.png, id=160, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Control/31.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Control/31.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Control/31.png  used on input line 179.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 179--180
-[][] 
- []
-
-[14 <../../../data_analysis_results/MMN/time_series/Control/29.png>] [15 <../../../data_analysis_results/MMN/time_series/Control/30.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/2.png, id=175, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/2.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/2.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/2.png  used on input line 185.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 185--186
-[][] 
- []
-
-<../../../data_analysis_results/MMN/time_series/Patient/3.png, id=180, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/3.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/3.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/3.png  used on input line 189.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 189--190
-[][] 
- []
-
-[16 <../../../data_analysis_results/MMN/time_series/Control/31.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/7.png, id=192, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/7.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/7.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/7.png  used on input line 193.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 193--194
-[][] 
- []
-
-[17 <../../../data_analysis_results/MMN/time_series/Patient/2.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/10.png, id=204, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/10.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/10.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/10.png  used on input line 197.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 197--198
-[][] 
- []
-
-[18 <../../../data_analysis_results/MMN/time_series/Patient/3.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/14.png, id=215, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/14.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/14.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/14.png  used on input line 201.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 201--202
-[][] 
- []
-
-[19 <../../../data_analysis_results/MMN/time_series/Patient/7.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/15.png, id=227, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/15.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/15.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/15.png  used on input line 205.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 205--206
-[][] 
- []
-
-[20 <../../../data_analysis_results/MMN/time_series/Patient/10.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/18.png, id=238, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/18.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/18.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/18.png  used on input line 209.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
-
-Overfull \hbox (21.62408pt too wide) in paragraph at lines 209--210
-[][] 
- []
-
-[21 <../../../data_analysis_results/MMN/time_series/Patient/14.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/21.png, id=249, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/21.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/21.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/21.png  used on input line 213.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
+[13 <../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png>]
+<../../../data_analysis_results/FuzzEnt/rest_phases_corr.png, id=216, 1445.4pt x 1445.4pt>
+File: ../../../data_analysis_results/FuzzEnt/rest_phases_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/rest_phases_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/rest_phases_corr.png  used on input line 213.
+(pdftex.def)             Requested size: 455.24408pt x 455.23724pt.
 
 Overfull \hbox (21.62408pt too wide) in paragraph at lines 213--214
 [][] 
  []
 
-[22 <../../../data_analysis_results/MMN/time_series/Patient/15.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/22.png, id=260, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/22.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/22.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/22.png  used on input line 217.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
+<../../../data_analysis_results/FuzzEnt/arith_phases_corr.png, id=217, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/arith_phases_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/arith_phases_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/arith_phases_corr.png  used on input line 217.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
 
 Overfull \hbox (21.62408pt too wide) in paragraph at lines 217--218
 [][] 
  []
 
-[23 <../../../data_analysis_results/MMN/time_series/Patient/18.png>]
-<../../../data_analysis_results/MMN/time_series/Patient/25.png, id=271, 867.24pt x 722.7pt>
-File: ../../../data_analysis_results/MMN/time_series/Patient/25.png Graphic file (type png)
-<use ../../../data_analysis_results/MMN/time_series/Patient/25.png>
-Package pdftex.def Info: ../../../data_analysis_results/MMN/time_series/Patient/25.png  used on input line 221.
-(pdftex.def)             Requested size: 455.24408pt x 379.36804pt.
+[14 <../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png>]
+<../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png, id=223, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png  used on input line 221.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
 
 Overfull \hbox (21.62408pt too wide) in paragraph at lines 221--222
 [][] 
  []
 
-[24 <../../../data_analysis_results/MMN/time_series/Patient/21.png>] [25 <../../../data_analysis_results/MMN/time_series/Patient/22.png>] [26 <../../../data_analysis_results/MMN/time_series/Patient/25.png>]
-Overfull \hbox (76.3852pt too wide) in paragraph at lines 234--235
+[15 <../../../data_analysis_results/FuzzEnt/rest_phases_corr.png>] [16 <../../../data_analysis_results/FuzzEnt/arith_phases_corr.png>]
+<../../../data_analysis_results/FuzzEnt/frontal_region_corr.png, id=235, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/frontal_region_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/frontal_region_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/frontal_region_corr.png  used on input line 226.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 226--227
+[][] 
+ []
+
+<../../../data_analysis_results/FuzzEnt/parietal_region_corr.png, id=236, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/parietal_region_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/parietal_region_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/parietal_region_corr.png  used on input line 230.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 230--231
+[][] 
+ []
+
+[17 <../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png>]
+<../../../data_analysis_results/FuzzEnt/central_region_corr.png, id=242, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/central_region_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/central_region_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/central_region_corr.png  used on input line 234.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 234--235
+[][] 
+ []
+
+[18 <../../../data_analysis_results/FuzzEnt/frontal_region_corr.png>]
+<../../../data_analysis_results/FuzzEnt/occipital_region_corr.png, id=248, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/occipital_region_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/occipital_region_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/occipital_region_corr.png  used on input line 238.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 238--239
+[][] 
+ []
+
+[19 <../../../data_analysis_results/FuzzEnt/parietal_region_corr.png>]
+<../../../data_analysis_results/FuzzEnt/temporal_region_corr.png, id=256, 722.7pt x 722.7pt>
+File: ../../../data_analysis_results/FuzzEnt/temporal_region_corr.png Graphic file (type png)
+<use ../../../data_analysis_results/FuzzEnt/temporal_region_corr.png>
+Package pdftex.def Info: ../../../data_analysis_results/FuzzEnt/temporal_region_corr.png  used on input line 242.
+(pdftex.def)             Requested size: 455.24408pt x 455.24826pt.
+
+Overfull \hbox (21.62408pt too wide) in paragraph at lines 242--243
+[][] 
+ []
+
+[20 <../../../data_analysis_results/FuzzEnt/central_region_corr.png>] [21 <../../../data_analysis_results/FuzzEnt/occipital_region_corr.png>] [22 <../../../data_analysis_results/FuzzEnt/temporal_region_corr.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 248.
+
+
+Overfull \hbox (10.38452pt too wide) in paragraph at lines 262--263
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 283.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 283.
+
+Overfull \hbox (10.38452pt too wide) in paragraph at lines 284--285
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.38458pt too wide) in paragraph at lines 285--286
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 286--287
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.38507pt too wide) in paragraph at lines 287--288
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (82.38525pt too wide) in paragraph at lines 290--291
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (70.38513pt too wide) in paragraph at lines 291--292
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 292--293
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.38507pt too wide) in paragraph at lines 293--294
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.38458pt too wide) in paragraph at lines 294--295
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[23
+
+]
+Overfull \hbox (16.38458pt too wide) in paragraph at lines 296--297
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (16.38458pt too wide) in paragraph at lines 297--298
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 298--299
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 299--301
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (118.38562pt too wide) in paragraph at lines 301--302
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (118.38562pt too wide) in paragraph at lines 302--303
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (130.38574pt too wide) in paragraph at lines 303--304
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (130.38574pt too wide) in paragraph at lines 304--305
+[][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (64.38507pt too wide) in paragraph at lines 305--306
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (40.38483pt too wide) in paragraph at lines 306--307
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 307--308
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (52.38495pt too wide) in paragraph at lines 308--309
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 309--310
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 310--311
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[24]
+Overfull \hbox (46.38489pt too wide) in paragraph at lines 351--352
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.38452pt too wide) in paragraph at lines 352--354
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.3855pt too wide) in paragraph at lines 378--380
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[25]
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 396--397
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (76.3852pt too wide) in paragraph at lines 238--239
+Overfull \hbox (76.3852pt too wide) in paragraph at lines 400--401
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (88.38531pt too wide) in paragraph at lines 242--243
+Overfull \hbox (88.38531pt too wide) in paragraph at lines 404--405
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-LaTeX Font Info:    Trying to load font information for OML+cmr on input line 246.
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 408.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 246.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 408.
 
-Overfull \hbox (22.38464pt too wide) in paragraph at lines 247--248
+Overfull \hbox (22.38464pt too wide) in paragraph at lines 409--410
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (70.38513pt too wide) in paragraph at lines 264--265
+Overfull \hbox (70.38513pt too wide) in paragraph at lines 426--427
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (64.38507pt too wide) in paragraph at lines 267--269
+Overfull \hbox (64.38507pt too wide) in paragraph at lines 429--431
 [][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[27
-
-]
-Overfull \hbox (166.38611pt too wide) in paragraph at lines 290--291
+[26]
+Overfull \hbox (166.38611pt too wide) in paragraph at lines 452--453
 [][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (64.38507pt too wide) in paragraph at lines 291--293
+Overfull \hbox (64.38507pt too wide) in paragraph at lines 453--455
 [][][][][][][][][][][][][][][][] 
  []
 
@@ -1323,29 +1414,33 @@ Package glossaries Warning: No \printglossary or \printglossaries found.
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[28] (./monthly_report.aux)
+[27] (./monthly_report.aux)
 Package rerunfilecheck Info: File `monthly_report.out' has not changed.
-(rerunfilecheck)             Checksum: BB5D4A195FE44681404A44F3FB908BF8;730.
+(rerunfilecheck)             Checksum: 16A4B72E979A452D966AFFA5703D5850;1151.
  ) 
 Here is how much of TeX's memory you used:
- 22423 strings out of 480129
- 418108 string characters out of 5893410
- 754755 words of memory out of 5000000
- 39924 multiletter control sequences out of 15000+600000
+ 22583 strings out of 480129
+ 420865 string characters out of 5893410
+ 771138 words of memory out of 5000000
+ 39947 multiletter control sequences out of 15000+600000
  474881 words of font info for 47 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
  91i,6n,91p,1234b,2180s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{glo:sz} has been referenced but does not exist, replaced by a fixed one
 
+pdfTeX warning (dest): name{glo:szPtnt} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{glo:hc} has been referenced but does not exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{glo:mmn} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{glo:daq} has been referenced but does not exist, replaced by a fixed one
 
- </home/emmanuel/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on monthly_report.pdf (28 pages, 4045031 bytes).
+ </home/emmanuel/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on monthly_report.pdf (27 pages, 11009362 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 308 compressed objects within 4 object streams
- 132 named destinations out of 1000 (max. 500000)
- 177 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 600 PDF objects out of 1000 (max. 8388607)
+ 498 compressed objects within 5 object streams
+ 268 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

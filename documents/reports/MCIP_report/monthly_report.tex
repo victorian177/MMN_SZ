@@ -54,177 +54,339 @@
 \maketitle
 
 \section{Summary}
-The previous report presented the data acquisition and processing methods along some obtained 
-results. Also highlighted were technical issues noticed during data acquisition and 
-issues with ergonomics of developed software for the clinicians. The previous report also 
-presented the next steps to be taken.\\
-\\
-This report will highlight the challenges and next steps stated within the previous report, 
-then present the progress made from the time of submission of the last report till the moment of 
-submission of this report, more recent challenges and the next steps to be taken.
+The previous report presented the fuzzy entropy regions extracted from cortical
+regions during phases of \gls{daq} and also the refined \gls{mmn} plots which 
+made the \gls{mmn} waveform more evident. Some of the next steps stated were
+\begin{itemize}
+  \item The continued iprovement of fuzzy-entropy library to work with multivariate \\
+  time-series(2D data)
+  \item comparing performance of the fuzzy-entropy features from sourced library to \\
+  that of the personally developed library
+  \item Computing the auditory steady state features
+\end{itemize}
+A detour made from the intended steps to be taken as stated within the previous report, 
+as the obtained features needed to be thoroughly analysed so as to justify the recomputing 
+of the fuzzy-entrop features using the developed library. Also the \gls{mmn} features 
+were also computed and analysed. Plots of features against features and montage plots 
+were analysed for information. This report presents the results from the features 
+computation, analysis, inference and next steps to be taken.
 
-\section{From February's Report}
-The last report presented results on some extracted features and stated some challenges the project is 
-facing which include scheduling and mobility issues, 
-subject attitude towards participation in exercise, cue communication and dellivery method, absence of 
-clinician and subject feedback system, fuzzy entropy spatial complexity algoritm problems and non-uniform session times.\\
-\\
-Also stated within the last report were the set of steps to be taken next. This steps included establishing 
-the best pre-processing path in terms of features being more discriminable, resolving left over issues 
-with audio cue delivery mechanism, development of hand held annotator for taking feedback from clinician and 
-subject, developing montage analysis algorithm, improvement of data acquisition paradigm and more data acquisition.\\
-\\
-In the next section, what has been achieved from the previously stated next steps is discussed.
+\section{From March's Report}
+In the previous report(for march submitted on the 3rd of April), the following was highlighted:
+\begin{itemize}
+  \item Recomputing of the \gls{mmn} waveforms
+  \item Spatial dimension augmentingwith gaussian noise during computation of fuzzy-entropy
+  \item Development of custm fuzzy-entropy library
+  \item Improvement in ergonomics of sftware for subject by implementing auditory cues for all 
+  major nigerian languages
+  \item development of an hand held annotator device to improve ergonomics for clinician and subject
+\end{itemize} 
 
 \section{Progress}
-In order to establish uniform data acquisition paradigm so that processing of data can be made 
-easier, from the already acquired data, for each phase, the minumum permissible timeframe that can be met from 
-the phase data of all subjects was adopted for data processing and set into the 
-Generis software as the default phase \gls{daq}. As stated that further data acquisition will take place, 
-since then data has been acquired from twenty more subjects, distributed almost equally between 
-patients and controls.\\
-\\
-To ensure ease of interpretation of arithmetic cues and instructions, audio recordings of 
-the cues and instructions has ben incorporated into the Generis software for all major Nigerian 
-languages in the areithmetic \gls{daq} phase.\\
-\\
-A handheld annotator is currently under design to take subject and clinician feedback on comfort, 
-artifact activity and arithmetic task completion. More details willbe given on this as the work progresses.\\
-\\
-In trying to establish a best data processing path, certain areas of possible improvements were 
-noted and acted on. One of such is the processing of the auditory phase signals from which the \gls{mmn} 
-waveform is computed. Previously,the three tone classes, one standard and two 
-deviant were plotted directly and investigated. The \gls{mmn} waveform is meant to be computed as the difference between 
-the deviants and the standard tone. This has been corrected and the results shown for each subject under section \ref{sec:figures}.
-Also to further smoothen the MMN waveform, a five point moving average was used and a minimum-maximum 
-scaler was used on each waveform to make visualization easier.\\
-\\
-Formerly, in computing the fuzzy entropy, the library used had a minimum space complexity requirement. 
-Electrode of cortical regions of high spatial proximity were combined to overcome this. This might 
-lead to some information loss. This has been improved by augmenting electrode of each region with spatial dimensions(channels) 
-of gaussian noise of zero mean and a unit standard deviation. The new results are shown under 
-section \ref{sec:figures}. After extensive  literature review a self developed fuzzy entropy algorithm has been written and tested 
-on univariate time-series, it is to be tested on multivariate time-series next. The code is given in section 
-\ref{sec:appendix}
-
-\section{Next Steps}
-Over the period of four weeks, I will be doing the following
+As stated a detour from the inttended next steps from the last report was taken. 
+Analysis of the extracted features was done so as to justify upcoming changes in 
+features computation. The analysis carried out, the accompaning figuures/plates and 
+codes where necessary are stated and referenced here after which the inference from 
+this set of aalysis are stated and the next course of action discussed. The analysis 
+and features computation done included the following:
 \begin{itemize}
-  \item Continue development of hand held annotator device
-  \item Improving self-developed fuzzy entropy library to work with multivariate
-  time-series(2D data).
-  \item Recomputing fuzzy entropy features.
-  \item Comparing fuzzy entropy features from developed library to sourced library.
-  \item Computing auditory steady state features.
+  \item Computation of \gls{mmn} value from \gls{mmn} waveform in 0-100ms, 100-200ms, 
+  200-300ms, 300-400ms, 400-450ms windows.(Code \ref{mmn_value_code})
+  \item Comparing \gls{mmn} values for 1KHz duration deviant and 3KHz frequency deviant 
+  between patient and controls across all electrodes and time windows.
+  (Figures \ref{mmnvalue_0_100ms} - \ref{mmnvalue_400_450ms})
+  \item Re-implementing montage plotting codeto improve time-complexity.(Code \ref{montage_plot_code})
+  \item Converting the \gls{mmn} values to montage plots for 1KHz duration deviant 
+  and 3KHz frequency deviant.
+  (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
+  \item Comparing distribution of computed fuzzy-entropy values of patients and controls 
+  for each cortical region across all phases of \gls{daq}.
+  (Figures \ref{fig:controlFuzzEnt}-\ref{fuzz_ent_distributions}) 
+  \item Investigating correlation of fuzzy-entropy values from cortical regions acroos 
+  all phases of \gls{daq}.(Figure \ref{fuzz_ent_corr_mat})
+  \item Comparing entropies from all cortical regions for each phase of \gls{daq}.
+  (Figures \ref{rest_fuzz}-\ref{auditory_fuzz})
+  \item Comparing entropies from all phases of \gls{daq} for each cortical region.
+  (figures \ref{frontal_fuzz}-\ref{temporal_fuzz})
+\end{itemize} 
+
+\section{Inference}
+The following infernce are drawn:
+\begin{itemize}
+  \item From the montage of the \gls{mmn} values, the \gls{mmn} activity is more 
+  evident in the frontal and temporal lobes. 
+  (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
+  \item The temporal lobe shows distinct activity between patients and controls 
+  from the montage plot and comparing of the 1KHz duration deviant against the 3KHZ 
+  frequency deviant in the 200-300ms window.
+  (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
+  \item The distributions of fuzzy entropy plotted in Figure \ref{fuzz_ent_distributions} 
+  how that the entropy values are similar between controls \glspl{hc} and \glspl{szPtnt} 
+  except in the frontal and temporal obes which shows jut a small fluctuation fro the 
+  common distributio pattern.(Figure \ref{fuzz_ent_distributions})
+  \item The correlation matrix of fuzzy entropies shows a re-occuring pattern from the 
+  arithmetic phase to the auditry phase of \gls{daq} between teh parietal, central, 
+  occipital and temporal regions. The frontal region does not conform to this. The 
+  temporal and occipital regionalso have a distinct pattern. This 
+  may suggest that the other regions except the frontal moght not contain any information 
+  change useful or vice-versa.(Figure \ref{fuzz_ent_corr_mat})
+  \item From the revious point, there may be the need to explore further methods of 
+  generating meaningful information from the frontal, temporal and occipital lobe 
+  fuzzy-entropies
+  \item Comparing fuzzy-entropy features against one another does ot show any form of 
+  linear-seperability, thus there may be the need to recompute the fuzzy entropy features 
+  using other sourced library and personally developed library to compare
 \end{itemize}
 
-\section{Figures}\label{sec:figures}
+\section{Next Steps}
+In this month of may, I will be doing the following
+\begin{itemize}
+  \item Computing adn analysing auditory steady state features
+  \item Further analysing current fuzzzy-entropy values for information
+  \item Re-computing fuzzy-entropy features using other libraries and comparing performance.
+  (Code \ref{dev_fuzzyentropy_code})
+  \item Exploring spatial filtering techniques to further extract information from 
+  \gls{mmn} value features
+  \item Exporing effects of dimensionality reduction techniques on discriminability of 
+  fuzzy-entropy values between \glspl{hc} and \glspl{szPtnt}
+\end{itemize}
+
+\clearpage
+\section{Figures}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_0.png}
+  \caption{\gls{mmn} values from 0-100ms}\label{mmnvalue_0_100ms}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_1.png}
+  \caption{\gls{mmn} values from 100-200ms}\label{mmnvalue_100_200ms}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_2.png}
+  \caption{\gls{mmn} values from 200-300ms}\label{mmnvalue_200_300ms}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_3.png}
+  \caption{\gls{mmn} values from 300-400ms}\label{mmnvalue_300_400ms}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_4.png}
+  \caption{\gls{mmn} values from 400-450ms}\label{mmnvalue_400_450ms}
+\end{figure}
+
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/montage/Control/1KHz_duration_deviant_montage.png}
+  \caption{Controls 1KHz duration deviant \gls{mmn} value montage}\label{control_1KHz_mmn_montage}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/montage/Patient/1KHz_duration_deviant_montage.png}
+  \caption{Patients 1KHz duration deviant \gls{mmn} value montage}\label{patient_1KHz_mmn_montage}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/montage/Control/3KHz_frequency_deviant_montage.png}
+  \caption{Controls 3KHz frequency deviant \gls{mmn} value montage}\label{control_3KHz_mmn_montage}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/montage/Patient/3KHz_frequency_deviant_montage.png}
+  \caption{Patients 3KHz frequency deviant \gls{mmn} value montage}\label{patient_3KHz_mmn_montage}
+\end{figure}
+
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/Control/all-fuzzyEntr.png}
-  \caption{Fuzzy Entropy from controls}
-  \label{fig:controlFuzzEnt}
+  \caption{Fuzzy Entropy from controls}\label{fig:controlFuzzEnt}
 \end{figure}
-
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/Patient/all-fuzzyEntr.png}
-  \caption{Fuzzy Entropy from patients}
-  \label{fig:patientFuzzEnt}
+  \caption{Fuzzy Entropy from patients}\label{fig:patientFuzzEnt}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/corticalRegions_DAQphase_distributions.png}
+  \caption{Fuzzy Entropy from controls}\label{fuzz_ent_distributions}
 \end{figure}
 
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/11.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/12.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/13.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/17.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/19.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/24.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/26.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/27.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/28.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/29.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/30.png}
-  \caption{A control subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Control/31.png}
-  \caption{A control subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/entropies_corr_mat.png}
+  \caption{Fuzzy-entropy values correlation smatrix}\label{fuzz_ent_corr_mat}
 \end{figure}
 
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/rest_phases_corr.png}
+  \caption{Rest Phases Fuzzy-entropy}\label{rest_fuzz}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/arith_phases_corr.png}
+  \caption{Arithmetic Phase Fuzzy-entropy}\label{arith_fuzz}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/auditory_phases_corr.png}
+  \caption{Auditory Phase Fuzzy-entropy}\label{auditory_fuzz}
+\end{figure}
 
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/2.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/frontal_region_corr.png}
+  \caption{Frontal lobe Fuzzy-entropy}\label{frontal_fuzz}
 \end{figure}
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/3.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/parietal_region_corr.png}
+  \caption{Parietal lobe Fuzzy-entropy}\label{parietal_fuzz}
 \end{figure}
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/7.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/central_region_corr.png}
+  \caption{Central lobe Fuzzy-entropy}\label{central_fuzz}
 \end{figure}
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/10.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/occipital_region_corr.png}
+  \caption{Occipital lobe Fuzzy-entropy}\label{occipital_fuzz}
 \end{figure}
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/14.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/15.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/18.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/21.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/22.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../data_analysis_results/MMN/time_series/Patient/25.png}
-  \caption{A \gls{sz} subject \gls{mmn} plots}
+  \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/temporal_region_corr.png}
+  \caption{Temporal lobe Fuzzy-entropy}\label{temporal_fuzz}
 \end{figure}
 
 \clearpage
 \section{Appendix}\label{sec:appendix}
-\subsection{Fuzzy Entropy Code}
+\subsection{\gls{mmn} time window value code}\label{mmn_value_code}
+\begin{lstlisting}
+import numpy as np
+
+class MMN:
+    def __init__(self,delay=10,position=40,window_size=20):
+        self.d = delay
+        self.p = position
+        self.w = window_size
+    
+    def mmn_value(self,x):
+        if x.ndim == 1:
+            return np.mean(x[self.p-self.d:self.p-self.d+self.w])
+        elif x.ndim == 2:
+            return np.mean(x[:,self.p-self.d:self.p-self.d+self.w],axis=1)
+\end{lstlisting}
+
+\subsection{montage plot code}\label{montage_plot_code}
+\begin{lstlisting}
+  import numpy as np
+  from matplotlib import pyplot as plt, patches
+  import mne
+  
+  from scipy.interpolate import PchipInterpolator,interp1d
+  
+  import os
+  
+  from math import cos, pi, sin, radians
+  from scipy.interpolate import griddata,interp2d
+  
+  r1 = 0.1
+  r2 =0.13
+  center = (r2+0.01,r2+0.01)
+  
+  
+  ELECTRODES = {
+      'FpZ':(r2+0.01+(r1*cos(radians(90))),r2+0.01+(r1*sin(radians(90)))),
+      'OZ':(r2+0.01+(r1*cos(radians(270))),r2+0.01+(r1*sin(radians(270)))),
+      'PZ':(r2+0.01+(0.48*r1*cos(radians(270))),r2+0.01+(0.48*r1*sin(radians(270)))),
+      'FZ':(r2+0.01+(0.48*r1*cos(radians(90))),r2+0.01+(0.48*r1*sin(radians(90)))),
+      'CZ':(r2+0.01,r2+0.01),
+  
+      'Fp1':(r2+0.01+(0.95*r1*cos(radians(100))),r2+0.01+(0.95*r1*sin(radians(100)))),
+      'Fp2':(r2+0.01+(0.95*r1*cos(radians(80))),r2+0.01+(0.95*r1*sin(radians(80)))),
+      'F7':(r2+0.01+(0.95*r1*cos(radians(145))),r2+0.01+(0.95*r1*sin(radians(145)))),
+      'F8':(r2+0.01+(0.95*r1*cos(radians(35))),r2+0.01+(0.95*r1*sin(radians(35)))),
+      'T7':(r2+0.01+(r1*cos(radians(180))),r2+0.01+(r1*sin(radians(180)))),
+      'T8':(r2+0.01+(r1*cos(radians(0))),r2+0.01+(r1*sin(radians(0)))),
+      'P7':(r2+0.01+(r1*cos(radians(215))),r2+0.01+(r1*sin(radians(215)))),
+      'P8':(r2+0.01+(r1*cos(radians(-35))),r2+0.01+(r1*sin(radians(-35)))),
+      'O1':(r2+0.01+(0.35*r1*cos(radians(240))),r2+0.01+(0.95*r1*sin(radians(240)))),
+      'O2':(r2+0.01+(0.35*r1*cos(radians(-60))),r2+0.01+(0.95*r1*sin(radians(-60)))),
+  
+      'F3':(r2+0.01+(0.48*r1*cos(radians(90)))-(0.4*r1),r2+0.01+(0.48*r1*sin(radians(90)))),
+      'F4':(r2+0.01+(0.48*r1*cos(radians(90)))+(0.4*r1),r2+0.01+(0.48*r1*sin(radians(90)))),
+      'P3':(r2+0.01+(0.48*r1*cos(radians(270)))-(0.4*r1),r2+0.01+(0.48*r1*sin(radians(270)))),
+      'P4':(r2+0.01+(0.48*r1*cos(radians(270)))+(0.4*r1),r2+0.01+(0.48*r1*sin(radians(270)))),
+      'C3':(r2+0.01+(0.5*r1*cos(radians(180))),r2+0.01+(0.5*r1*sin(radians(180)))),
+      'C4':(r2+0.01+(0.5*r1*cos(radians(0))),r2+0.01+(0.5*r1*sin(radians(0)))),
+      'T3':(r2+0.01+(0.95*r1*cos(radians(180))),r2+0.01+(0.95*r1*sin(radians(180)))),
+      'T4':(r2+0.01+(0.95*r1*cos(radians(0))),r2+0.01+(0.95*r1*sin(radians(0)))),
+      'T5':(r2+0.01+(0.95*r1*cos(radians(220))),r2+0.01+(0.95*r1*sin(radians(220)))),
+      'T6':(r2+0.01+(0.95*r1*cos(radians(-40))),r2+0.01+(0.95*r1*sin(radians(-40)))),
+  }
+  
+  EDGE_COORDS = [
+      (r2+0.01+(r2*cos(radians(90))),r2+0.01+(r2*sin(radians(90)))),
+      (r2+0.01+(r2*cos(radians(270))),r2+0.01+(r2*sin(radians(270)))),
+      (r2+0.01+(r2*cos(radians(115))),r2+0.01+(r2*sin(radians(115)))),
+      (r2+0.01+(r2*cos(radians(65))),r2+0.01+(r2*sin(radians(65)))),
+      (r2+0.01+(r2*cos(radians(145))),r2+0.01+(r2*sin(radians(145)))),
+      (r2+0.01+(r2*cos(radians(35))),r2+0.01+(r2*sin(radians(35)))),
+      (r2+0.01+(r2*cos(radians(180))),r2+0.01+(r2*sin(radians(180)))),
+      (r2+0.01+(r2*cos(radians(0))),r2+0.01+(r2*sin(radians(0)))),
+      (r2+0.01+(r2*cos(radians(215))),r2+0.01+(r2*sin(radians(215)))),
+      (r2+0.01+(r2*cos(radians(-35))),r2+0.01+(r2*sin(radians(-35)))),
+      (r2+0.01+(r2*cos(radians(245))),r2+0.01+(r2*sin(radians(245)))),
+      (r2+0.01+(r2*cos(radians(-65))),r2+0.01+(r2*sin(radians(-65)))),
+  ]
+  
+  def draw_electrode(electrodes,ax):
+      for electrode in electrodes:
+          position = ELECTRODES[electrode]
+          ax.text(position[0], position[1], electrode,
+              verticalalignment='center',
+              horizontalalignment='center',
+              size=10
+          )
+  
+  def draw_nose(ax):
+          """Draw nose."""
+          nose1 = plt.Line2D([0.13,0.14],
+                            [0.27,0.29],
+                            linewidth=1,
+                            color=(0, 0, 0))
+          nose2 = plt.Line2D([0.14,0.15],
+                            [0.29,0.27],
+                            linewidth=1,
+                            color=(0, 0, 0))
+          ax.add_line(nose1)
+          ax.add_line(nose2)
+  
+  def montage_plot(eeg_sample,electrodes,ax):
+      head_outer_circle = patches.Circle(center, radius=r2+0.001, color='black')
+      head_inner_circle = patches.Circle(center, radius=r2, color='white')
+  
+      # ax.set_aspect(1)
+      ax.add_artist(head_outer_circle)
+      ax.add_artist(head_inner_circle)
+  
+      draw_nose(ax)
+      draw_electrode(electrodes,ax)
+  
+      points=[]
+      for electrode in electrodes:
+          points.append(ELECTRODES[electrode])
+      points = points + EDGE_COORDS
+      X,Y=np.mgrid[0:1:50j, 0:1:50j]
+      Xi,Yi=np.meshgrid(X,Y)
+      points = np.array(points)
+  
+      mu = np.mean(eeg_sample,0)
+      mu_add = np.ones((len(EDGE_COORDS)))*mu
+      data_sample = np.hstack((eeg_sample,mu_add))
+      # data_sample = eeg_sample
+  
+      ax.set_ylim(0,2*(r2+0.02))
+      ax.set_xlim(0,2*(r2+0.02))
+  
+      Z=griddata(points,data_sample,(Xi,Yi),'cubic')
+      CS = ax.contour(Xi,Yi,Z,30,cmap='RdBu',extend='both',linewidths=20,extent=(0,1,0,1))
+  
+      # ax.axis('off')
+      ax.get_xaxis().set_ticks([])
+      ax.get_yaxis().set_ticks([])
+      ax.patch.set_facecolor((1,1,1,0.01))
+      ax.patch.set_alpha(0.0)
+      # ax.set_aspect('equal')
+      # plt.show()
+\end{lstlisting}
+
+\subsection{Fuzzy Entropy Code}\label{dev_fuzzyentropy_code}
 \begin{lstlisting}
 import numpy as np
 from scipy.spatial.distance import cdist
