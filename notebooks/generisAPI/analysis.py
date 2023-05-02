@@ -34,6 +34,36 @@ class mmnFeaturesAnalysis:
         plt.savefig(name,format='png')
         plt.close(fig)
 
+class entropyFeaturesAnalysis:
+    def __init__(self):
+        pass
+
+    def compareEntropiesBtwClasses(self,df,patientsIndex,controlsIndex,title='title',name='name',size=(20,20)):
+        ch = df.shape[1]
+        plt.ion()
+        fig,ax = plt.subplots(ch,ch,figsize=size)
+        fig.suptitle(title)
+        for r in range(ch):
+            for c in range(ch):
+                y_vals = df.iloc[patientsIndex,c]
+                x_vals = df.iloc[patientsIndex,r]
+                ax[r,c].scatter(x_vals,y_vals,label='Patients')
+                y_vals = df.iloc[controlsIndex,c]
+                x_vals = df.iloc[controlsIndex,r]
+                ax[r,c].scatter(x_vals,y_vals,label='Controls')
+                ax[r,c].legend()
+                if c==0:
+                    ax[r,c].set_ylabel(df.columns[r])
+                if r==ch-1:
+                    ax[r,c].set_xlabel(df.columns[c])
+        fig.tight_layout()
+        fig.subplots_adjust(top=0.95)
+        plt.savefig(name,format='png')
+        plt.close(fig)
+
+    def correlationMAtrix(self,df):
+        None
+
 
 
 
