@@ -54,7 +54,7 @@
 \maketitle
 
 \section{Summary}
-The previous report presented the fuzzy entropy regions extracted from cortical
+The previous report presented the fuzzy entropy features extracted from cortical
 regions during phases of \gls{daq} and also the refined \gls{mmn} plots which 
 made the \gls{mmn} waveform more evident. Some of the next steps stated were
 \begin{itemize}
@@ -64,45 +64,44 @@ made the \gls{mmn} waveform more evident. Some of the next steps stated were
   that of the personally developed library
   \item Computing the auditory steady state features
 \end{itemize}
-A detour made from the intended steps to be taken as stated within the previous report, 
-as the obtained features needed to be thoroughly analysed so as to justify the recomputing 
-of the fuzzy-entrop features using the developed library. Also the \gls{mmn} features 
-were also computed and analysed. Plots of features against features and montage plots 
-were analysed for information. This report presents the results from the features 
-computation, analysis, inference and next steps to be taken.
+A detour was made from the intended steps to be taken as stated within the previous report.
+The extracted features have been analysed to get a sense of how discriminable the 
+subject classes are using these features so as to implement the classifier instrument. 
+The \gls{mmn} features were found to offer some level of discriminability in the 
+temporal lobe and frontal lobe, while the fuzzy entropy feature was not discriminable, 
+but correlation analysis showed that the fuzzy entropy might contain some useful 
+information.
 
 \section{From March's Report}
 In the previous report(for march submitted on the 3rd of April), the following was highlighted:
 \begin{itemize}
-  \item Recomputing of the \gls{mmn} waveforms
-  \item Spatial dimension augmentingwith gaussian noise during computation of fuzzy-entropy
-  \item Development of custm fuzzy-entropy library
-  \item Improvement in ergonomics of sftware for subject by implementing auditory cues for all 
-  major nigerian languages
-  \item development of an hand held annotator device to improve ergonomics for clinician and subject
+  \item Recomputing the \gls{mmn} waveforms
+  \item Spatial dimension augmentation with gaussian noise during computation of fuzzy-entropy
+  \item Development of custom fuzzy-entropy library
+  \item Improvement in ergonomics of software for subject by implementing auditory cues for all 
+  major Nigerian languages
+  \item Development of an hand held annotator device to improve ergonomics for clinician and subject
 \end{itemize} 
 
 \section{Progress}
-As stated a detour from the inttended next steps from the last report was taken. 
+As stated, a detour from the intended next steps from the last report was taken. 
 Analysis of the extracted features was done so as to justify upcoming changes in 
-features computation. The analysis carried out, the accompaning figuures/plates and 
-codes where necessary are stated and referenced here after which the inference from 
-this set of aalysis are stated and the next course of action discussed. The analysis 
-and features computation done included the following:
+features computation. The results of the analysis are given in 
+section \ref{figures}. The set of analysis done includes:
 \begin{itemize}
   \item Computation of \gls{mmn} value from \gls{mmn} waveform in 0-100ms, 100-200ms, 
   200-300ms, 300-400ms, 400-450ms windows.(Code \ref{mmn_value_code})
   \item Comparing \gls{mmn} values for 1KHz duration deviant and 3KHz frequency deviant 
   between patient and controls across all electrodes and time windows.
   (Figures \ref{mmnvalue_0_100ms} - \ref{mmnvalue_400_450ms})
-  \item Re-implementing montage plotting codeto improve time-complexity.(Code \ref{montage_plot_code})
+  \item Re-implementing montage plotting code to improve time-complexity.(Code \ref{montage_plot_code})
   \item Converting the \gls{mmn} values to montage plots for 1KHz duration deviant 
-  and 3KHz frequency deviant.
+  and 3KHz frequency deviant for easier interpretation.
   (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
   \item Comparing distribution of computed fuzzy-entropy values of patients and controls 
   for each cortical region across all phases of \gls{daq}.
   (Figures \ref{fig:controlFuzzEnt}-\ref{fuzz_ent_distributions}) 
-  \item Investigating correlation of fuzzy-entropy values from cortical regions acroos 
+  \item Correlating fuzzy-entropy values from cortical regions across 
   all phases of \gls{daq}.(Figure \ref{fuzz_ent_corr_mat})
   \item Comparing entropies from all cortical regions for each phase of \gls{daq}.
   (Figures \ref{rest_fuzz}-\ref{auditory_fuzz})
@@ -113,46 +112,32 @@ and features computation done included the following:
 \section{Inference}
 The following infernce are drawn:
 \begin{itemize}
-  \item From the montage of the \gls{mmn} values, the \gls{mmn} activity is more 
-  evident in the frontal and temporal lobes. 
-  (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
-  \item The temporal lobe shows distinct activity between patients and controls 
-  from the montage plot and comparing of the 1KHz duration deviant against the 3KHZ 
-  frequency deviant in the 200-300ms window.
-  (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
-  \item The distributions of fuzzy entropy plotted in Figure \ref{fuzz_ent_distributions} 
-  how that the entropy values are similar between controls \glspl{hc} and \glspl{szPtnt} 
-  except in the frontal and temporal obes which shows jut a small fluctuation fro the 
-  common distributio pattern.(Figure \ref{fuzz_ent_distributions})
-  \item The correlation matrix of fuzzy entropies shows a re-occuring pattern from the 
-  arithmetic phase to the auditry phase of \gls{daq} between teh parietal, central, 
-  occipital and temporal regions. The frontal region does not conform to this. The 
-  temporal and occipital regionalso have a distinct pattern. This 
-  may suggest that the other regions except the frontal moght not contain any information 
-  change useful or vice-versa.(Figure \ref{fuzz_ent_corr_mat})
-  \item From the revious point, there may be the need to explore further methods of 
-  generating meaningful information from the frontal, temporal and occipital lobe 
-  fuzzy-entropies
-  \item Comparing fuzzy-entropy features against one another does ot show any form of 
-  linear-seperability, thus there may be the need to recompute the fuzzy entropy features 
-  using other sourced library and personally developed library to compare
+  \item The \gls{mmn} features in the 1KHz ad 3KHz deviant are more 
+  evident in different cortical regions. 
+  \item Using the \gls{mmn} features of the temporal lobe 
+  from the two tone deviants, the \glspl{hc} can be discriminated 
+  from the \glspl{szPtnt}
+  \item The fuzzy entropy features must be recomputed or undergo 
+  further processing to provide discriminable information
+  \item The fuzzy entropy of the frontal lobes might contain information 
+  that is discriminable between both classes. It exhibits different 
+  correlation patterns from the other cortical regions. This occurs to 
+  a less significant extent in the temporal and occipital lobes.
 \end{itemize}
 
 \section{Next Steps}
 In this month of may, I will be doing the following
 \begin{itemize}
-  \item Computing adn analysing auditory steady state features
-  \item Further analysing current fuzzzy-entropy values for information
-  \item Re-computing fuzzy-entropy features using other libraries and comparing performance.
-  (Code \ref{dev_fuzzyentropy_code})
-  \item Exploring spatial filtering techniques to further extract information from 
-  \gls{mmn} value features
-  \item Exporing effects of dimensionality reduction techniques on discriminability of 
-  fuzzy-entropy values between \glspl{hc} and \glspl{szPtnt}
+  \item Computing the auditory steady state features
+  \item Re-computing fuzzy-entropy features using other libraries and 
+  comparing performance.(Code \ref{dev_fuzzyentropy_code})
+  \item Improve discriminability of features using spatial filters.
+  \item Apply all features to a custom mutilayer feedforward network 
+  for classification.
 \end{itemize}
 
 \clearpage
-\section{Figures}
+\section{Figures}\label{figures}
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_0.png}
   \caption{\gls{mmn} values from 0-100ms}\label{mmnvalue_0_100ms}
