@@ -53,50 +53,103 @@
 \begin{document}
 \maketitle
 
-\section{Summary}
-The previous report presented the fuzzy entropy features extracted from cortical
-regions during phases of \gls{daq} and also the refined \gls{mmn} plots which 
-made the \gls{mmn} waveform more evident. Some of the next steps stated were
+\section{Overview}
+The puripose of this project is to design an instrument for early \gls{sz} diagnosis.
+In designing the instrument, the following parts are to be developed:
 \begin{itemize}
-  \item The continued iprovement of fuzzy-entropy library to work with multivariate \\
+  \item An \gls{eeg} \gls{daq} software.
+  \item \gls{daq} user interface.
+  \item Hand-clicker device for \gls{daq} process feedback from patient and clinicians.
+  \item Machine/deep learning model.
+  \item Soft instrument interacting with learnt model, \gls{daq} software, hand-held 
+  clicker, \gls{eeg} headbox and all developed parts.
+  
+\end{itemize}
+
+The contec \gls{eeg} headbox is being used for generation of the \gls{eeg} signals.
+In order to fetch \gls{eeg} signals from the headbox, a piece of software that interacts 
+with the contec's firmware has been developed. This piece of software has been incorporated 
+with a user interface developed that makes \gls{daq} sessions interactive for both 
+subjects and clinicians. The user interface and firmware interacting code together make 
+up the Generis software presented in the first report.
+
+In order to make \gls{daq} sessions more interactive, a hand-held clicker is being developed 
+to help patients and clinicians give feedback to the Generis software. This piece of hardware 
+will improve processing of signals as time during \gls{daq} of noise causing actions can be 
+annotated and also times of subject inactivity or inert state to \gls{daq}. The hand-held clicker 
+is able to communicate with the Generis software through UART to USB communication.
+
+In order to have an instrument of high accuracy and to solve the problem of \gls{sz} diagnosis 
+being based on psychiatric nosology, the instrument(model) must be calibrated to seperate 
+\glspl{szPtnt} from \glspl{hc}. This is being done using machine-learning and/or 
+deep-learning methods and signal-processing algorithms to extract information relevant to 
+\gls{sz} measurement and to improve discriminability.
+
+The final instrument that integrates all of the designed parts is to be devloped upon 
+completion of the hand-held clicker and complete development of model to be used in 
+measuring the extent of \gls{sz} disorder and classification of subjects. The structure 
+of the final instrument is shown in the diagram below.
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../images/technical/instrumet.png}
+  \caption{\gls{sz} diagnosis instrument}\label{instrument}
+\end{figure}
+
+
+\section{Hand-held clicker}
+The hand-held clicker design is based on an arduino nano which applies the output of four 
+tact switches as inputs to four vectored interrupts on the nano development board. The 
+exact labels of these inputs has not been assigned as a study of the erogonomics of 
+conventions employed in other devices of this kind and how best conventions are adapted and 
+modified for the use case of this project is being studied. The circuit diagram of the 
+hand-held clicker and a 3D design of its housing is given in figures \ref{clicker_circuit} 
+and \ref{clicker_3D}.
+
+\section{Model Development (Feature-extraction, Data-analysis)}
+\subsection{Feature Extraction}
+March's report presented the fuzzy entropy features extracted from cortical
+regions during phases of \gls{daq} and also the refined \gls{mmn} plots which 
+made the \gls{mmn} waveform more evident. Relevant changes made to features 
+extraction highlighted in marchs's report includes:
+\begin{itemize}
+  \item Recomputing the \gls{mmn} waveforms
+  \item Spatial dimension augmentation with gaussian noise during computation of fuzzy-entropy
+  \item Development of custom fuzzy-entropy library
+\end{itemize}
+The following was proposed as the next set of action points:
+\begin{itemize}
+  \item The continued improvement of fuzzy-entropy library to work with multivariate \\
   time-series(2D data)
   \item comparing performance of the fuzzy-entropy features from sourced library to \\
   that of the personally developed library
   \item Computing the auditory steady state features
 \end{itemize}
-A detour was made from the intended steps to be taken as stated within the previous report.
-The extracted features have been analysed to get a sense of how discriminable the 
-subject classes are using these features so as to implement the classifier instrument. 
-The \gls{mmn} features were found to offer some level of discriminability in the 
-temporal lobe and frontal lobe, while the fuzzy entropy feature was not discriminable, 
-but correlation analysis showed that the fuzzy entropy might contain some useful 
-information.
+A slight detour was made from these proposed action points for the month of april. 
+Analysis of the extracted features for levels of dicriminability was carried out 
+to understand how to improve the features extraction methods. The analysis shows 
+a significant level of discrimination in the \gls{mmn} features, less in the 
+fuzzy-entropy features, though the correlation patterns of the fuzzy-entropy features 
+suggest they might carry information on extent of \gls{sz} disorder.
 
-\section{From March's Report}
-In the previous report(for march submitted on the 3rd of April), the following was highlighted:
-\begin{itemize}
-  \item Recomputing the \gls{mmn} waveforms
-  \item Spatial dimension augmentation with gaussian noise during computation of fuzzy-entropy
-  \item Development of custom fuzzy-entropy library
-  \item Improvement in ergonomics of software for subject by implementing auditory cues for all 
-  major Nigerian languages
-  \item Development of an hand held annotator device to improve ergonomics for clinician and subject
-\end{itemize} 
+\gls{mmn} features have been extracted from the scaled \gls{mmn} waveforms. The 
+\gls{mmn} features were computed as the mean of the \gls{mmn} waveforms within 
+the time-frames 0-100ms, 100-200ms, 200-300ms, 300-400ms, 400-450ms.
 
-\section{Progress}
-As stated, a detour from the intended next steps from the last report was taken. 
-Analysis of the extracted features was done so as to justify upcoming changes in 
-features computation. The results of the analysis are given in 
-section \ref{figures}. The set of analysis done includes:
+Formerly implemented montage plot algorithm was improved upon to reduce 
+time-complexity so as to make data visualization and analysis easier to obtain 
+intuitive information from.
+
+\subsection{Data Analysis/Visualization}\label{data_analyis}
+ Analysis of the extracted features was done to establish the quality of discriminative 
+ and quantitative information contained in the extracted features. The method of 
+ Visualization of some of these features changed to make analysis easy.
+ The results of the analysis are given in section \ref{figures}. Visualization methods 
+ and analysis carried out includes:
 \begin{itemize}
-  \item Computation of \gls{mmn} value from \gls{mmn} waveform in 0-100ms, 100-200ms, 
-  200-300ms, 300-400ms, 400-450ms windows.(Code \ref{mmn_value_code})
-  \item Comparing \gls{mmn} values for 1KHz duration deviant and 3KHz frequency deviant 
+  \item Comparing \gls{mmn} feature values for 1KHz duration deviant and 3KHz frequency deviant 
   between patient and controls across all electrodes and time windows.
   (Figures \ref{mmnvalue_0_100ms} - \ref{mmnvalue_400_450ms})
-  \item Re-implementing montage plotting code to improve time-complexity.(Code \ref{montage_plot_code})
   \item Converting the \gls{mmn} values to montage plots for 1KHz duration deviant 
-  and 3KHz frequency deviant for easier interpretation.
+  and 3KHz frequency deviant for easier interpretation and analyzing montage evolution.
   (Figures \ref{control_1KHz_mmn_montage}-\ref{patient_3KHz_mmn_montage})
   \item Comparing distribution of computed fuzzy-entropy values of patients and controls 
   for each cortical region across all phases of \gls{daq}.
@@ -109,35 +162,38 @@ section \ref{figures}. The set of analysis done includes:
   (figures \ref{frontal_fuzz}-\ref{temporal_fuzz})
 \end{itemize} 
 
-\section{Inference}
-The following infernce are drawn:
-\begin{itemize}
-  \item The \gls{mmn} features in the 1KHz ad 3KHz deviant are more 
-  evident in different cortical regions. 
-  \item Using the \gls{mmn} features of the temporal lobe 
-  from the two tone deviants, the \glspl{hc} can be discriminated 
-  from the \glspl{szPtnt}
-  \item The fuzzy entropy features must be recomputed or undergo 
-  further processing to provide discriminable information
-  \item The fuzzy entropy of the frontal lobes might contain information 
-  that is discriminable between both classes. It exhibits different 
-  correlation patterns from the other cortical regions. This occurs to 
-  a less significant extent in the temporal and occipital lobes.
-\end{itemize}
+\section{Inference and Action Points}
+\subsection{Inference}
+From the analysis carried out, the \gls{mmn} features of both tone deviants show 
+discriminative properties between the \gls{szPtnt} and \gls{hc} in localized head 
+regions. The fuzzy-entropy features do not show discriminative abilities, but their 
+correlation patterns indicate a linear relationship that might be a measure of degree 
+of \gls{sz} disorder. Therefore we need to find methods that improve quality of extracted 
+features and proceed with developing a learner model.
 
-\section{Next Steps}
-In this month of may, I will be doing the following
+\subsection{Action Points}
+Based on the inference drawn, the action points for the month of may is as follows:
 \begin{itemize}
-  \item Computing the auditory steady state features
+  \item Computing the auditory steady state features.
   \item Re-computing fuzzy-entropy features using other libraries and 
-  comparing performance.(Code \ref{dev_fuzzyentropy_code})
-  \item Improve discriminability of features using spatial filters.
-  \item Apply all features to a custom mutilayer feedforward network 
-  for classification.
+  comparing performance.
+  \item Improve discriminability of features using spatial filters and dimensionality 
+  reduction techniques.
+  \item Compare performance of a custom mutilayer feedforward network and traditional 
+  machine-learning algorithms for classification and estimation of measures of degree 
+  of \gls{sz} disorder.
 \end{itemize}
 
-\clearpage
 \section{Figures}\label{figures}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/circuit_image.png}
+  \caption{Hand-held clicker circuit}\label{clicker_circuit}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/3D_design_image.jpeg}
+  \caption{3D design of housing for hand-held clicker}\label{clicker_3D}
+\end{figure}
+
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_0.png}
   \caption{\gls{mmn} values from 0-100ms}\label{mmnvalue_0_100ms}
@@ -227,220 +283,5 @@ In this month of may, I will be doing the following
   \includegraphics[width=16cm]{../../../data_analysis_results/FuzzEnt/temporal_region_corr.png}
   \caption{Temporal lobe Fuzzy-entropy}\label{temporal_fuzz}
 \end{figure}
-
-\clearpage
-\section{Appendix}\label{sec:appendix}
-\subsection{\gls{mmn} time window value code}\label{mmn_value_code}
-\begin{lstlisting}
-import numpy as np
-
-class MMN:
-    def __init__(self,delay=10,position=40,window_size=20):
-        self.d = delay
-        self.p = position
-        self.w = window_size
-    
-    def mmn_value(self,x):
-        if x.ndim == 1:
-            return np.mean(x[self.p-self.d:self.p-self.d+self.w])
-        elif x.ndim == 2:
-            return np.mean(x[:,self.p-self.d:self.p-self.d+self.w],axis=1)
-\end{lstlisting}
-
-\subsection{montage plot code}\label{montage_plot_code}
-\begin{lstlisting}
-  import numpy as np
-  from matplotlib import pyplot as plt, patches
-  import mne
-  
-  from scipy.interpolate import PchipInterpolator,interp1d
-  
-  import os
-  
-  from math import cos, pi, sin, radians
-  from scipy.interpolate import griddata,interp2d
-  
-  r1 = 0.1
-  r2 =0.13
-  center = (r2+0.01,r2+0.01)
-  
-  
-  ELECTRODES = {
-      'FpZ':(r2+0.01+(r1*cos(radians(90))),r2+0.01+(r1*sin(radians(90)))),
-      'OZ':(r2+0.01+(r1*cos(radians(270))),r2+0.01+(r1*sin(radians(270)))),
-      'PZ':(r2+0.01+(0.48*r1*cos(radians(270))),r2+0.01+(0.48*r1*sin(radians(270)))),
-      'FZ':(r2+0.01+(0.48*r1*cos(radians(90))),r2+0.01+(0.48*r1*sin(radians(90)))),
-      'CZ':(r2+0.01,r2+0.01),
-  
-      'Fp1':(r2+0.01+(0.95*r1*cos(radians(100))),r2+0.01+(0.95*r1*sin(radians(100)))),
-      'Fp2':(r2+0.01+(0.95*r1*cos(radians(80))),r2+0.01+(0.95*r1*sin(radians(80)))),
-      'F7':(r2+0.01+(0.95*r1*cos(radians(145))),r2+0.01+(0.95*r1*sin(radians(145)))),
-      'F8':(r2+0.01+(0.95*r1*cos(radians(35))),r2+0.01+(0.95*r1*sin(radians(35)))),
-      'T7':(r2+0.01+(r1*cos(radians(180))),r2+0.01+(r1*sin(radians(180)))),
-      'T8':(r2+0.01+(r1*cos(radians(0))),r2+0.01+(r1*sin(radians(0)))),
-      'P7':(r2+0.01+(r1*cos(radians(215))),r2+0.01+(r1*sin(radians(215)))),
-      'P8':(r2+0.01+(r1*cos(radians(-35))),r2+0.01+(r1*sin(radians(-35)))),
-      'O1':(r2+0.01+(0.35*r1*cos(radians(240))),r2+0.01+(0.95*r1*sin(radians(240)))),
-      'O2':(r2+0.01+(0.35*r1*cos(radians(-60))),r2+0.01+(0.95*r1*sin(radians(-60)))),
-  
-      'F3':(r2+0.01+(0.48*r1*cos(radians(90)))-(0.4*r1),r2+0.01+(0.48*r1*sin(radians(90)))),
-      'F4':(r2+0.01+(0.48*r1*cos(radians(90)))+(0.4*r1),r2+0.01+(0.48*r1*sin(radians(90)))),
-      'P3':(r2+0.01+(0.48*r1*cos(radians(270)))-(0.4*r1),r2+0.01+(0.48*r1*sin(radians(270)))),
-      'P4':(r2+0.01+(0.48*r1*cos(radians(270)))+(0.4*r1),r2+0.01+(0.48*r1*sin(radians(270)))),
-      'C3':(r2+0.01+(0.5*r1*cos(radians(180))),r2+0.01+(0.5*r1*sin(radians(180)))),
-      'C4':(r2+0.01+(0.5*r1*cos(radians(0))),r2+0.01+(0.5*r1*sin(radians(0)))),
-      'T3':(r2+0.01+(0.95*r1*cos(radians(180))),r2+0.01+(0.95*r1*sin(radians(180)))),
-      'T4':(r2+0.01+(0.95*r1*cos(radians(0))),r2+0.01+(0.95*r1*sin(radians(0)))),
-      'T5':(r2+0.01+(0.95*r1*cos(radians(220))),r2+0.01+(0.95*r1*sin(radians(220)))),
-      'T6':(r2+0.01+(0.95*r1*cos(radians(-40))),r2+0.01+(0.95*r1*sin(radians(-40)))),
-  }
-  
-  EDGE_COORDS = [
-      (r2+0.01+(r2*cos(radians(90))),r2+0.01+(r2*sin(radians(90)))),
-      (r2+0.01+(r2*cos(radians(270))),r2+0.01+(r2*sin(radians(270)))),
-      (r2+0.01+(r2*cos(radians(115))),r2+0.01+(r2*sin(radians(115)))),
-      (r2+0.01+(r2*cos(radians(65))),r2+0.01+(r2*sin(radians(65)))),
-      (r2+0.01+(r2*cos(radians(145))),r2+0.01+(r2*sin(radians(145)))),
-      (r2+0.01+(r2*cos(radians(35))),r2+0.01+(r2*sin(radians(35)))),
-      (r2+0.01+(r2*cos(radians(180))),r2+0.01+(r2*sin(radians(180)))),
-      (r2+0.01+(r2*cos(radians(0))),r2+0.01+(r2*sin(radians(0)))),
-      (r2+0.01+(r2*cos(radians(215))),r2+0.01+(r2*sin(radians(215)))),
-      (r2+0.01+(r2*cos(radians(-35))),r2+0.01+(r2*sin(radians(-35)))),
-      (r2+0.01+(r2*cos(radians(245))),r2+0.01+(r2*sin(radians(245)))),
-      (r2+0.01+(r2*cos(radians(-65))),r2+0.01+(r2*sin(radians(-65)))),
-  ]
-  
-  def draw_electrode(electrodes,ax):
-      for electrode in electrodes:
-          position = ELECTRODES[electrode]
-          ax.text(position[0], position[1], electrode,
-              verticalalignment='center',
-              horizontalalignment='center',
-              size=10
-          )
-  
-  def draw_nose(ax):
-          """Draw nose."""
-          nose1 = plt.Line2D([0.13,0.14],
-                            [0.27,0.29],
-                            linewidth=1,
-                            color=(0, 0, 0))
-          nose2 = plt.Line2D([0.14,0.15],
-                            [0.29,0.27],
-                            linewidth=1,
-                            color=(0, 0, 0))
-          ax.add_line(nose1)
-          ax.add_line(nose2)
-  
-  def montage_plot(eeg_sample,electrodes,ax):
-      head_outer_circle = patches.Circle(center, radius=r2+0.001, color='black')
-      head_inner_circle = patches.Circle(center, radius=r2, color='white')
-  
-      # ax.set_aspect(1)
-      ax.add_artist(head_outer_circle)
-      ax.add_artist(head_inner_circle)
-  
-      draw_nose(ax)
-      draw_electrode(electrodes,ax)
-  
-      points=[]
-      for electrode in electrodes:
-          points.append(ELECTRODES[electrode])
-      points = points + EDGE_COORDS
-      X,Y=np.mgrid[0:1:50j, 0:1:50j]
-      Xi,Yi=np.meshgrid(X,Y)
-      points = np.array(points)
-  
-      mu = np.mean(eeg_sample,0)
-      mu_add = np.ones((len(EDGE_COORDS)))*mu
-      data_sample = np.hstack((eeg_sample,mu_add))
-      # data_sample = eeg_sample
-  
-      ax.set_ylim(0,2*(r2+0.02))
-      ax.set_xlim(0,2*(r2+0.02))
-  
-      Z=griddata(points,data_sample,(Xi,Yi),'cubic')
-      CS = ax.contour(Xi,Yi,Z,30,cmap='RdBu',extend='both',linewidths=20,extent=(0,1,0,1))
-  
-      # ax.axis('off')
-      ax.get_xaxis().set_ticks([])
-      ax.get_yaxis().set_ticks([])
-      ax.patch.set_facecolor((1,1,1,0.01))
-      ax.patch.set_alpha(0.0)
-      # ax.set_aspect('equal')
-      # plt.show()
-\end{lstlisting}
-
-\subsection{Fuzzy Entropy Code}\label{dev_fuzzyentropy_code}
-\begin{lstlisting}
-import numpy as np
-from scipy.spatial.distance import cdist
-import time
-
-def sigmoid(x,r):
-    assert isinstance(r,tuple), 'When Fx = "Sigmoid", r must be a two-element tuple.'
-    y = 1/(1 + np.exp((x-r[1])/r[0]))
-    return y  
-def default(x,r):   
-    assert isinstance(r,tuple), 'When Fx = "Default", r must be a two-element tuple.'
-    y = np.exp(-(x**r[1])/r[0])
-    return y     
-def modsampen(x,r):
-    assert isinstance(r,tuple), 'When Fx = "Modsampen", r must be a two-element tuple.'
-    y = 1/(1 + np.exp((x-r[1])/r[0]))
-    return y    
-def gudermannian(x,r):
-    if r <= 0:
-        raise Exception('When Fx = "Gudermannian", r must be a scalar > 0.')
-    y = np.arctan(np.tanh(r/x))    
-    y = y/np.max(y)    
-    return y    
-def linear(x,r):    
-    if r == 0 and x.shape[0]>1:    
-        y = np.exp(-(x - np.min(x))/np.ptp(x))
-    elif r == 1:
-        y = np.exp(-(x - np.min(x)))
-    elif r == 0 and x.shape[0]==1:   
-        y = 0
-    else:
-        print(r)
-        raise Exception('When Fx = "Linear", r must be 0 or 1')
-    return y
-
-class fuzzEntropy:
-    def __init__(self,window_size,dissimilarity_index,membership_function='linear'):
-        self.m = self.window_size = window_size
-        self.r = self.dissimilarity_index = dissimilarity_index
-        self.mu = self.membership_function = globals()[membership_function.lower()]
-    
-    def __computeFuzzyMatrix(self,x,m):
-        if x.ndim == 1:
-            N = x.shape[0]
-            Xm = np.array([x[i:i+m-1].tolist() for i in range(0,N-m)])
-            dm = cdist(Xm,Xm,'euclidean')
-            dm = self.mu(dm,self.r)
-            phim = np.sum(dm,axis=1)/(N-m+1)
-        return phim
-    
-    def _fuzzyEntropyCompute(self,x):
-        N = x.shape[0]
-        phim = self.__computeFuzzyMatrix(x,self.m)
-        phim1 = self.__computeFuzzyMatrix(x,self.m+1)
-
-        psim = (1/(N-self.m+1)) * np.sum(phim,axis=0)
-        psim1 = (1/(N-self.m+2)) * np.sum(phim1,axis=0)
-
-        with np.errstate(divide='ignore', invalid='ignore'):
-            fuzz = np.log(psim)-np.log(psim1)
-        return fuzz
-    
-def fuzzEntropy2D(x,window_size,dissimilarity_index,membership_function=gaussianMembershipfunction):
-        fuzzyent = fuzzEntropy(window_size,dissimilarity_index,membership_function)
-
-        res = np.empty(x.shape[0])
-        for i in range(x.shape[0]):
-            res[i] = fuzzyent._fuzzyEntropyCompute(x[i,:])
-        return res.mean()
-\end{lstlisting}
 
 \end{document}

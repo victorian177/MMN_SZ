@@ -1,4 +1,5 @@
 import numpy as np
+import scipy.signal as sig
 
 class MMN:
     def __init__(self,delay=10,position=40,window_size=20):
@@ -11,6 +12,44 @@ class MMN:
             return np.mean(x[self.p-self.d:self.p-self.d+self.w])
         elif x.ndim == 2:
             return np.mean(x[:,self.p-self.d:self.p-self.d+self.w],axis=1)
+        
+class ASSR:
+    def __init__(self,freq,dfreq,fs=200):
+        self.freq = freq
+        self.lfreq = freq-dfreq
+        self.hfreq = freq+dfreq
+        self.fs = fs
+        self.nyquist = fs/2
+        self.b, self.a = sig.butter(4,[self.lfreq/self.nyquist, self.hfreq/self.nyquist],\
+                                    btype='band')
+        self.fit_transform = self.assr
+        
+    def assr(self,X):
+        #reshape data if need be
+        if X.ndim==1:
+            X=X.reshape(1,X.shape[0])
+        
+        #filter data in frequency range of interest
+        filtered_data = sig.filtfilt(self.b, self.a, X, axis=1)
+    
+        #generate complex sinusoids at stimulation frequency for each channel
+        n_samples = filtered_data.shape[1]
+        t = np.arange(n_samples)/self.fs
+        stim_complex = np.exp(2j * np.pi * self.freq * t)
+        stim_complex = np.tile(stim_complex, (filtered_data.shape[0],1))
+    
+        #perform frequency domain averaging to generate ASSR
+        hilbert_data = sig.hilbert(filtered_data, axis=1)
+        assr_complex = np.mean(stim_complex * hilbert_data, axis=1)
+        assr_amplitude = np.abs(assr_complex)
+        assr_phase = np.angle(assr_complex)
+
+        return assr_amplitude, assr_phase
+
+
+
+
+
         
 
 # def mmn_value(time_series, deviant_position, standard_position, window_size, delay):
