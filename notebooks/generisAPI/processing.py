@@ -38,7 +38,17 @@ class trial_averaging:
 
     def fit_transform(self,X):
         return np.average(X,self.axis)
+    
+class trials_averaging:
+    def __init__(self):
+        pass
 
+    def fit_transform(self,X):
+        sum = 0
+        for x in X:
+            sum+=np.array(x)
+        sum/=len(X)
+        return sum
 
 class stft:
     def __init__(self,fs,sfreq):
