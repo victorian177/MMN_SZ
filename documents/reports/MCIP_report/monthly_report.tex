@@ -54,29 +54,40 @@
 \maketitle
 
 \section{Overview}
-The puripose of this project is to design an instrument for early \gls{sz} diagnosis.
+The purpose of this project is to design an instrument for early \gls{sz} diagnosis.
 In designing the instrument, the following parts are to be developed:
 \begin{itemize}
-  \item An \gls{eeg} \gls{daq} software.
+  \item An \gls{eeg} \gls{daq} system
   \item \gls{daq} user interface.
   \item Hand-clicker device for \gls{daq} process feedback from patient and clinicians.
   \item Machine/deep learning model.
-  \item Soft instrument interacting with learnt model, \gls{daq} software, hand-held 
+  \item Soft instrument interacting with learnt model, \gls{daq} software, handheld 
   clicker, \gls{eeg} headbox and all developed parts.
   
 \end{itemize}
+The goal is to develop a medical turnkey device for \gls{sz} diagnosis having its own 
+\gls{eeg} device and deeply embedded software. The long-term goal is for this turnkey device 
+and its software to be built around the OpenBCI \gls{eeg} kit. The OpenBCI is chosen as
+minimal number of electrode sites needed for \gls{sz} diagnosis may be identified and thus 
+an \gls{eeg} kit that allows for flexibility of electrodes to be used is needed. This will 
+mitigate the cost of the device making it more accessible. In the short term, the contec 
+\gls{eeg} headbox is being used in identifying the best electrode sites.
 
-The contec \gls{eeg} headbox is being used for generation of the \gls{eeg} signals.
+The contec \gls{eeg} headbox is being used in place of the OpenBCI headbox temporarily 
+for generation of the \gls{eeg} signals.
 In order to fetch \gls{eeg} signals from the headbox, a piece of software that interacts 
 with the contec's firmware has been developed. This piece of software has been incorporated 
 with a user interface developed that makes \gls{daq} sessions interactive for both 
 subjects and clinicians. The user interface and firmware interacting code together make 
 up the Generis software presented in the first report.
 
-In order to make \gls{daq} sessions more interactive, a hand-held clicker is being developed 
-to help patients and clinicians give feedback to the Generis software. This piece of hardware 
-will improve processing of signals as time during \gls{daq} of noise causing actions can be 
-annotated and also times of subject inactivity or inert state to \gls{daq}. The hand-held clicker 
+In order to make \gls{daq} sessions more interactive, a handheld clicker is being developed 
+to help patients and clinicians give feedback to the Generis software. Annotations can be 
+somewhat a tough technical task and in certain cases becomes an headache for non-technical 
+users. Once annotation messagess are configured into this clicker device, adding annotations 
+will be redced to a task of simply clicking color coded buttons. This piece of hardware 
+will also improve processing of signals as time during \gls{daq} of noise causing actions can be 
+annotated and also times of subject inactivity or inert state to \gls{daq}. The handheld clicker 
 is able to communicate with the Generis software through UART to USB communication.
 
 In order to have an instrument of high accuracy and to solve the problem of \gls{sz} diagnosis 
@@ -86,23 +97,45 @@ deep-learning methods and signal-processing algorithms to extract information re
 \gls{sz} measurement and to improve discriminability.
 
 The final instrument that integrates all of the designed parts is to be devloped upon 
-completion of the hand-held clicker and complete development of model to be used in 
+completion of the handheld clicker and complete development of model to be used in 
 measuring the extent of \gls{sz} disorder and classification of subjects. The structure 
 of the final instrument is shown in the diagram below.
 \begin{figure}[H]
-  \includegraphics[width=16cm]{../../../images/technical/instrumet.png}
+  \includegraphics[width=16cm]{../../../images/technical/instrument.drawio.png}
   \caption{\gls{sz} diagnosis instrument}\label{instrument}
 \end{figure}
 
 
-\section{Hand-held clicker}
-The hand-held clicker design is based on an arduino nano which applies the output of four 
+\section{Handheld clicker}
+The handheld clicker design is based on an arduino nano which applies the output of four 
 tact switches as inputs to four vectored interrupts on the nano development board. The 
 exact labels of these inputs has not been assigned as a study of the erogonomics of 
 conventions employed in other devices of this kind and how best conventions are adapted and 
-modified for the use case of this project is being studied. The circuit diagram of the 
-hand-held clicker and a 3D design of its housing is given in figures \ref{clicker_circuit} 
-and \ref{clicker_3D}.
+modified for the use case of this project is being studied. 
+
+The current design of the handheld clicker(annotator) is the second iteration and is referred 
+to as HC-v0.2. 
+The circuit diagram of the handheld clicker is given in figure \ref{clicker_circuit}.
+The flowchart describing the algorithm of this device is shown in figure \ref{clicker_flowchart}. 
+The front and top images of the hand-clicker-v0.2 are shown in figures \ref{clicker} and 
+\ref{top_view_of_clicker}.
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/circuit_image.png}
+  \caption{handheld clicker circuit}\label{clicker_circuit}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[height=16cm,width=10cm]{../../../hardware/handheld_clicker/flowchart.png}
+  \caption{Flowchart algorithm of clicker}\label{clicker_flowchart}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/front.jpeg}
+  \caption{Front view of clicker}\label{clicker}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[,height=10cm,width=8cm]{../../../hardware/handheld_clicker/top.jpeg}
+  \caption{Top view of clicker}\label{top_view_of_clicker}
+\end{figure}
+
 
 \section{Model Development (Feature-extraction, Data-analysis)}
 \subsection{Feature Extraction}
@@ -185,14 +218,6 @@ Based on the inference drawn, the action points for the month of may is as follo
 \end{itemize}
 
 \section{Figures}\label{figures}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/circuit_image.png}
-  \caption{Hand-held clicker circuit}\label{clicker_circuit}
-\end{figure}
-\begin{figure}[H]
-  \includegraphics[width=16cm]{../../../hardware/handheld_clicker/3D_design_image.jpeg}
-  \caption{3D design of housing for hand-held clicker}\label{clicker_3D}
-\end{figure}
 
 \begin{figure}[H]
   \includegraphics[width=16cm]{../../../data_analysis_results/MMN/features/deviant_tone_0.png}
