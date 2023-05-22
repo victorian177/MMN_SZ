@@ -6,7 +6,7 @@ from scipy.interpolate import PchipInterpolator,interp1d
 
 import os
 
-from math import cos, pi, sin, radians
+from math import cos, pi, sin, radians, floor
 from scipy.interpolate import griddata,interp2d
 
 r1 = 0.1
@@ -175,3 +175,26 @@ def entropy_plot(ax,data,pos):
     ax.bar(pos,data,1)
     # ax.set_xticks([1,2,3,4],['rest1','arith','rest2','auditory'])
     # ax.set_ylabel('FuzzEnt')
+
+def get_assr_data_4_plot(assr):
+    assrs = np.empty((len(assr),2,19))
+    for si,subject in enumerate(assr):
+        assrs[si,:,:] = subject
+    return assrs
+
+def assr_plot(patients,controls,electrodes,title='ASSR plot'):
+    fig,ax = plt.subplots(3,7,figsize=(14,6))
+    for ei,electrode in enumerate(electrodes):
+        r = floor(ei/7)
+        c = ei%7
+        ax[r,c].scatter(patients[:,1,ei],patients[:,0,ei])
+        ax[r,c].scatter(controls[:,1,ei],controls[:,0,ei])
+        ax[r,c].set_title(electrode)
+        if c == 0:
+            ax[r,c].set_ylabel('Amplitude')
+        if r == 2:
+            ax[r,c].set_xlabel('Phase')
+    fig.tight_layout()
+    fig.subplots_adjust(top=0.9)
+    fig.legend(['patients','controls'],loc='lower right')
+    fig.suptitle(title)
