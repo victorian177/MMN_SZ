@@ -143,3 +143,17 @@ def all_subjects_preprocessor(pipeline,subjects_data):
         data[s]['eeg_data'] = subject_preprocessor(pipeline,subjects_data[s]['eeg_data'])
         data[s]['eeg_markers'] = subjects_data[s]['eeg_markers']
     return data
+
+def trials_as_subject_augmentation(data,orig_data,flag_subjects=[]):
+    res = dict()
+    for id in data.keys():
+        if id not in flag_subjects:
+            assert len(data[id]['eeg_data']['rest1']) == len(data[id]['eeg_data']['rest1'])\
+            == len(data[id]['eeg_data']['arith']) == len(data[id]['eeg_data']['auditory'])
+            no_trials = len(data[id]['eeg_data']['rest1'])
+            for nt in range(no_trials):
+                res[id+'_'+str(nt)] = {'eeg_data':{},'eeg_markers':{},'category':orig_data[id]['category']}
+                for k in ['rest1','rest2','arith','auditory']:
+                    res[id+'_'+str(nt)]['eeg_data'][k] = data[id]['eeg_data'][k][nt]
+                    res[id+'_'+str(nt)]['eeg_markers'][k] = data[id]['eeg_markers'][k][nt]
+    return res

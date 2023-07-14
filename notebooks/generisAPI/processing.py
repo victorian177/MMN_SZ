@@ -122,7 +122,8 @@ def phase_trials_processor(pipeline,phase):
 def all_subjects(pipeline,data):
     res=dict()
     for s in data:
-        res[s] = phase_trials_processor(pipeline,data[s]['eeg_data'])
+        # res[s] = phase_trials_processor(pipeline,data[s]['eeg_data'])
+        res[s] = pipeline.fit_transform(data[s]['eeg_data'])
         # print(s)
     print("done")
     return res

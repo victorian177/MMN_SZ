@@ -169,6 +169,29 @@ def electrodes_mmn_plot(ax,data,c0,c1,electrodes,points):
     }
     mmn_plot(ax,mmn_data,electrodes[c0:c1],points)
 
+def mmn_feature_plot(mmn_value1_array,mmn_value2_array, patients, controls, electrodes, div,title):
+    fig,ax = plt.subplots(3,7,figsize=(16,6))
+    for r in range(3):
+        for c in range(7):
+            ax[r,c].scatter(
+                mmn_value1_array[patients,div,(7*r)+c],
+                mmn_value2_array[patients,div,(7*r)+c]
+                )
+            ax[r,c].scatter(
+                mmn_value1_array[controls,div,(7*r)+c],
+                mmn_value2_array[controls,div,(7*r)+c]
+                )
+            ax[r,c].set_title(electrodes[(7*r)+c])
+            if r==2:
+                ax[r,c].set_xlabel('1k_duration_deviant')
+            if c==0:
+                ax[r,c].set_ylabel('3k_duration_deviant')
+            if (7*r)+c == 18:
+                break
+    fig.suptitle(title)
+    fig.tight_layout(pad=0.95)
+    fig.legend(['Patients','Controls'],loc='lower right')
+
 def entropy_plot(ax,data,pos):
     if len(data) > 2:
         data=np.array(data).mean()
@@ -179,7 +202,7 @@ def entropy_plot(ax,data,pos):
 def get_assr_data_4_plot(assr):
     assrs = np.empty((len(assr),2,19))
     for si,subject in enumerate(assr):
-        assrs[si,:,:] = subject
+        assrs[si,:,:] = assr[subject]
     return assrs
 
 def assr_plot(patients,controls,electrodes,title='ASSR plot'):

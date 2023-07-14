@@ -8,38 +8,49 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler, minmax_scale
 #     xm=data[subject]['eeg_markers'][phase]
 #     fs= data[subject]['Fs'][phase]
 #     for i,m in enumerate(xm):
-#         xm[i][0] = np.floor(m[0].astype(float)*(fs[i]*10))
+#         xm[i][0] = np.floor(m[0].astype(float)*(fs[i]*10))s
 
-def auditory_stimuli_epoching(data,subject,dt,phase='auditory'):
+def auditory_stimuli_epoching(data,subject,dt):
     dt=int(dt*200)
     x=data[subject]['eeg_data']
     xm=data[subject]['eeg_markers']
     res=dict()
-    for p,pdata in enumerate(xm):
-        if x[p].shape != (0,0,0):
-            unique_markers = np.unique(pdata[1])
-            # unique_markers = np.delete(unique_markers, np.where(unique_markers == ' '))
-            unique_index = [np.where(pdata[1] == m) for m in unique_markers]
-            # epochs_arr = dict().fromkeys(unique_markers.tolist())
-            for m in unique_markers:
-                res[m] = np.empty((0,x[p].shape[0],dt))
-            for m in range(len(unique_markers)):
-                for i,ind in enumerate(unique_index[m][0]):
-                    res[unique_markers[m]] = np.vstack((
-                        res[unique_markers[m]],
-                        x[p][:,ind:ind+dt].reshape(1,x[p].shape[0],dt)
+    if isinstance(x,list):
+        for p,pdata in enumerate(xm):
+            if x[p].shape != (0,0,0):
+                unique_markers = np.unique(pdata[1])
+                unique_index = [np.where(pdata[1] == m) for m in unique_markers]
+                for m in unique_markers:
+                    res[m] = np.empty((0,x[p].shape[0],dt))
+                for m in range(len(unique_markers)):
+                    for i,ind in enumerate(unique_index[m][0]):
+                        res[unique_markers[m]] = np.vstack((
+                            res[unique_markers[m]],
+                            x[p][:,ind:ind+dt].reshape(1,x[p].shape[0],dt)
                     ))
+    elif isinstance(x,np.ndarray):
+        if x.shape != (0,0,0):
+            unique_markers = np.unique(xm[1])
+            unique_index = [np.where(xm[1] == m) for m in unique_markers]
+            for m in unique_markers:
+                res[m] = np.empty((0,x.shape[0],dt))
+            for m in range(len(unique_markers)):
+                for i,ind in enumerate(unique_index[m]):
+                    for ts in ind:
+                        res[unique_markers[m]] = np.vstack((
+                            res[unique_markers[m]],
+                            x[:,ts:ts+dt].reshape(1,x.shape[0],dt)
+                        ))
     return res
 
-def subject_phase_auditory_epochs(data,subject,dt,phase='auditory'):
-    x = data[subject]['eeg_data']
-    res = auditory_stimuli_epoching(data,subject,dt,phase)
+def subject_phase_auditory_epochs(data,subject,dt):
+    res = auditory_stimuli_epoching(data,subject,dt)
     return res
 
-def all_subjects_phase_auditory_epochs(data,dt,phase='auditory'):
+def all_subjects_phase_auditory_epochs(data,dt):
     res=dict()
     for subject in data:
-        res[subject] = subject_phase_auditory_epochs(data,subject,dt,phase)
+        res[subject] = subject_phase_auditory_epochs(data,subject,dt)
     return res
 
 class pipeline:

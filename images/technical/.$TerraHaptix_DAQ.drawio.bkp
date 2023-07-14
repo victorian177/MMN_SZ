@@ -1,0 +1,64 @@
+<mxfile host="Electron" modified="2023-07-10T20:46:21.609Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="E2gicE9T1EThs0ZRi91T" version="21.2.8" type="device">
+  <diagram name="Page-1" id="Hol3-DynTtiRQ9ds7TQp">
+    <mxGraphModel dx="794" dy="787" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="maEqPs03qNuLEGwHUJtR-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=-0.008;entryY=0.35;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-1" target="maEqPs03qNuLEGwHUJtR-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-1" value="Umyo" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="180" width="410" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-5" value="Data Acquisition Software" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="200" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-6" target="maEqPs03qNuLEGwHUJtR-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-6" target="maEqPs03qNuLEGwHUJtR-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-6" target="maEqPs03qNuLEGwHUJtR-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-6" value="Bandpass filtering" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="290" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.003;exitY=0.333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-4" target="maEqPs03qNuLEGwHUJtR-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="420" as="sourcePoint" />
+            <mxPoint x="430" y="370" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="305" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-11" target="maEqPs03qNuLEGwHUJtR-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-11" value="Frequency-Temporal feature extraction" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="403.75" y="230" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-12" target="maEqPs03qNuLEGwHUJtR-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-12" value="Label Generator" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="403.75" y="390" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="maEqPs03qNuLEGwHUJtR-13" target="maEqPs03qNuLEGwHUJtR-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-13" value="Frequency feature extraction" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="407.5" y="290" width="112.5" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="maEqPs03qNuLEGwHUJtR-14" value="Lab Streaming Layer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="550" y="290" width="60" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -45,6 +45,13 @@ class ASSR:
         assr_phase = np.angle(assr_complex)
 
         return assr_amplitude, assr_phase
+    
+def average_trials_assr(assr_data,null_data_checker):
+    new_assr_data = dict()
+    for s in assr_data:
+        if s not in null_data_checker.indices:
+            new_assr_data[s] = pcn.trials_averaging().fit_transform(assr_data[s])
+    return new_assr_data
 
 
 
