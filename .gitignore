@@ -1,4 +1,6 @@
-/EEGbasicSensoryTaskSchizophrenia.zip
-/documents/'eeeoau BSc Latex Thesis Template v0.5'/
-/documents/'eeeoau BSc Latex Thesis Template v0.5.rar'
-/documents/eeeoauthesis.pdf
+*.model
+*.onnx
+*.zip
+*.pyc
+documents/reports/*
+*.h5
