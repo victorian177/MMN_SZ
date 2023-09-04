@@ -4,3 +4,6 @@
 *.pyc
 documents/reports/*
 *.h5
+*.dtmp
+*.bkp
+/Generis/*
